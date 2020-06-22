@@ -3,11 +3,15 @@ package io.student.modules.sys.entity;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.FieldStrategy;
+
 import io.student.common.validator.group.AddGroup;
 import io.student.common.validator.group.UpdateGroup;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -34,11 +38,31 @@ public class SysUserEntity implements Serializable {
 	 */
 	@NotBlank(message="用户名不能为空", groups = {AddGroup.class, UpdateGroup.class})
 	private String username;
+	
+	
+	/**
+	 * 姓名
+	 */
+	@NotBlank(message="姓名不能为空", groups = {AddGroup.class, UpdateGroup.class})
+	private String name;
+	
+	public String getName() {
+		return name;
+	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@NotNull(message="部门不能为空", groups = {AddGroup.class, UpdateGroup.class})
+	private Long deptId;
+	/**
+	 * 部门名称
+	 */
+	private String deptName;
 	/**
 	 * 密码
 	 */
-	@NotBlank(message="密码不能为空", groups = AddGroup.class)
 	private String password;
 
 	/**
@@ -49,13 +73,15 @@ public class SysUserEntity implements Serializable {
 	/**
 	 * 邮箱
 	 */
-	@NotBlank(message="邮箱不能为空", groups = {AddGroup.class, UpdateGroup.class})
-	@Email(message="邮箱格式不正确", groups = {AddGroup.class, UpdateGroup.class})
+//	@NotBlank(message="邮箱不能为空", groups = {AddGroup.class, UpdateGroup.class})
+//	@Email(message="邮箱格式不正确", groups = {AddGroup.class, UpdateGroup.class})
+	@TableField(strategy = FieldStrategy.IGNORED)
 	private String email;
 
 	/**
 	 * 手机号
 	 */
+	@TableField(strategy = FieldStrategy.IGNORED)
 	private String mobile;
 
 	/**
@@ -213,5 +239,20 @@ public class SysUserEntity implements Serializable {
 
 	public void setSalt(String salt) {
 		this.salt = salt;
+	}
+	public Long getDeptId() {
+		return deptId;
+	}
+
+	public void setDeptId(Long deptId) {
+		this.deptId = deptId;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
 	}
 }

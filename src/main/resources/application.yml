@@ -7,13 +7,13 @@ server:
   port: 8080
   connection-timeout: 5000ms
   servlet:
-    context-path: /student_bak
+    context-path: /student_service
 
 
 spring:
   # 环境 dev|test|prod
   profiles:
-    active: prod
+    active: '@profileActive@'
   # jackson时间格式化
   jackson:
     time-zone: GMT+8
@@ -36,11 +36,8 @@ spring:
         max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
         max-idle: 10      # 连接池中的最大空闲连接
         min-idle: 5       # 连接池中的最小空闲连接
-  mvc:
-    throw-exception-if-no-handler-found: true
-    static-path-pattern: /static/**
   resources:
-    add-mappings: false
+    static-locations: classpath:/static/,classpath:/view/
 
 #mybatis
 mybatis-plus:

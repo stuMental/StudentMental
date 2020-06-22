@@ -26,7 +26,13 @@ import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.quartz.QuartzJobBean;
+import org.springframework.util.ResourceUtils;
 
+import com.alibaba.fastjson.JSON;
+
+import static org.hamcrest.CoreMatchers.instanceOf;
+
+import java.net.URLDecoder;
 import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -45,9 +51,18 @@ public class ScheduleJob extends QuartzJobBean {
 	
     @Override
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-        ScheduleJobEntity scheduleJob = (ScheduleJobEntity) context.getMergedJobDataMap()
-        		.get(ScheduleJobEntity.JOB_PARAM_KEY);
-        
+//        ScheduleJobEntity scheduleJob = (ScheduleJobEntity) context.getMergedJobDataMap().get(ScheduleJobEntity.JOB_PARAM_KEY);
+        Object object=context.getMergedJobDataMap().get(ScheduleJobEntity.JOB_PARAM_KEY);
+        ScheduleJobEntity scheduleJob=new ScheduleJobEntity();
+        if(object instanceof ScheduleJobEntity)
+        {
+        	scheduleJob=(ScheduleJobEntity)object;
+        }else
+        {
+        	scheduleJob=JSON.parseObject(JSON.toJSON(object).toString(), ScheduleJobEntity.class);
+        }
+    	
+    	
         //获取spring bean
         ScheduleJobLogService scheduleJobLogService = (ScheduleJobLogService) SpringContextUtils.getBean("scheduleJobLogService");
         
@@ -58,15 +73,22 @@ public class ScheduleJob extends QuartzJobBean {
         log.setMethodName(scheduleJob.getMethodName());
         log.setParams(scheduleJob.getParams());
         log.setCreateTime(new Date());
-        
+        log.setStatus(-1);
+        log.setTimes(0);
+        scheduleJobLogService.insert(log);
         //任务开始时间
         long startTime = System.currentTimeMillis();
-        
+        String logpath=String.valueOf(log.getLogId());
+        try {
+         logpath=URLDecoder.decode(ResourceUtils.getURL("classpath:").getPath(),"utf-8").replace("webapps/student_service/WEB-INF/classes/", "logs/")+String.valueOf(log.getLogId())+".log";
+        }catch (Exception e) {
+		logger.error(e.toString());
+		}
         try {
             //执行任务
         	logger.info("任务准备执行，任务ID：" + scheduleJob.getJobId());
             ScheduleRunnable task = new ScheduleRunnable(scheduleJob.getBeanName(),
-            		scheduleJob.getMethodName(), scheduleJob.getParams());
+            		scheduleJob.getMethodName(), scheduleJob.getParams(),logpath);
             Future<?> future = service.submit(task);
             
 			future.get();
@@ -89,7 +111,7 @@ public class ScheduleJob extends QuartzJobBean {
 			log.setStatus(1);
 			log.setError(StringUtils.substring(e.toString(), 0, 2000));
 		}finally {
-			scheduleJobLogService.insert(log);
+			scheduleJobLogService.insertOrUpdate(log);
 		}
     }
 }

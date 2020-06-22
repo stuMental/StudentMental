@@ -3,12 +3,15 @@ package io.student.modules.sys.service.impl;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+
+import io.student.common.annotation.DataFilter;
 import io.student.common.exception.RRException;
 import io.student.common.utils.Constant;
 import io.student.common.utils.PageUtils;
 import io.student.common.utils.Query;
 import io.student.modules.sys.dao.SysRoleDao;
 import io.student.modules.sys.entity.SysRoleEntity;
+import io.student.modules.sys.service.SysRoleDeptService;
 import io.student.modules.sys.service.SysRoleMenuService;
 import io.student.modules.sys.service.SysRoleService;
 import io.student.modules.sys.service.SysUserRoleService;
@@ -38,10 +41,14 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleDao, SysRoleEntity> i
 	private SysUserService sysUserService;
     @Autowired
     private SysUserRoleService sysUserRoleService;
+	@Autowired
+	private SysRoleDeptService sysRoleDeptService;
+	@Autowired
+	private SysRoleDao sysRoleDao;
 
 	@Override
 	public PageUtils queryPage(Map<String, Object> params) {
-		String roleName = (String)params.get("roleName");
+	/*	String roleName = (String)params.get("roleName");
 		Long createUserId = (Long)params.get("createUserId");
 
 		Page<SysRoleEntity> page = this.selectPage(
@@ -50,10 +57,22 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleDao, SysRoleEntity> i
 				.like(StringUtils.isNotBlank(roleName),"role_name", roleName)
 				.eq(createUserId != null,"create_user_id", createUserId)
 		);
-
-		return new PageUtils(page);
+*/
+		Query query = new Query(params);
+		
+		return new PageUtils(queryList(params),queryTotal(params),query.getLimit(), query.getCurrPage());
+	}
+	
+	
+	@DataFilter(tableAlias = "r", user = false)
+	private List<SysRoleEntity> queryList(Map<String, Object> map) {
+		return sysRoleDao.queryList(map);
 	}
 
+	@DataFilter(tableAlias = "r", user = false)
+	private int queryTotal(Map<String, Object> map) {
+		return sysRoleDao.queryTotal(map);
+	}
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void save(SysRoleEntity role) {
@@ -65,6 +84,10 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleDao, SysRoleEntity> i
 
         //保存角色与菜单关系
         sysRoleMenuService.saveOrUpdate(role.getRoleId(), role.getMenuIdList());
+        //保存角色与部门关系
+        if(role.getDeptIdList()!=null) {
+      	sysRoleDeptService.saveOrUpdate(role.getRoleId(), role.getDeptIdList());
+        }
     }
 
     @Override
@@ -77,6 +100,10 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleDao, SysRoleEntity> i
 
         //更新角色与菜单关系
         sysRoleMenuService.saveOrUpdate(role.getRoleId(), role.getMenuIdList());
+        if(role.getDeptIdList()!=null) {
+		//保存角色与部门关系
+		sysRoleDeptService.saveOrUpdate(role.getRoleId(), role.getDeptIdList());
+        }
     }
 
     @Override

@@ -16,7 +16,6 @@
 
 package io.student.modules.oss.controller;
 
-import com.google.gson.Gson;
 import io.student.common.exception.RRException;
 import io.student.common.utils.ConfigConstant;
 import io.student.common.utils.Constant;
@@ -35,6 +34,8 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.alibaba.fastjson.JSON;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -75,7 +76,7 @@ public class SysOssController {
     @GetMapping("/config")
     @RequiresPermissions("sys:oss:all")
     public R config(){
-        CloudStorageConfig config = sysConfigService.getConfigObject(KEY, CloudStorageConfig.class);
+        CloudStorageConfig config = sysConfigService.getConfigObject("config",KEY, CloudStorageConfig.class);
 
         return R.ok().put("config", config);
     }
@@ -101,7 +102,7 @@ public class SysOssController {
 			ValidatorUtils.validateEntity(config, QcloudGroup.class);
 		}
 
-        sysConfigService.updateValueByKey(KEY, new Gson().toJson(config));
+        sysConfigService.updateValueByKey("config",KEY, JSON.toJSONString(config));
 
 		return R.ok();
 	}

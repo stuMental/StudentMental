@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e452d3e8-1822-4033-9590-68441561880f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_4_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_10.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_10.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_47.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_oss_aliyun_sdk_oss_2_8_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generate_2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_support_2_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatisplus_spring_boot_starter_1_0_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_axet_kaptcha_0_0_9.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jhlabs_filters_2_0_235.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_qcloud_cos_api_4_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_qiniu_qiniu_java_sdk_7_2_29.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_14_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_17_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_7_9.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_configuration_commons_configuration_1_10.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_7_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_0_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_25_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_25_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_25_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_25_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_25_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_25_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_1_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_7_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_7_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_7_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_7_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_7_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_7_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_7_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_13.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_13.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_9_9.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_44.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_7_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_9.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_10_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_10_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_cache_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_core_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_ogdl_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_cipher_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_core_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_hash_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_event_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_lang_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_31.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_31.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_31.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_9_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_10_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jdom_jdom_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20140107.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_1_0_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_15_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_3_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_0_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_0_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_0_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_7_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_5_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/student_service.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/oracle.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/postgresql.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/sqlserver.sql" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/favicon-16x16.png" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/favicon-16x16.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/favicon-32x32.png" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/favicon-32x32.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/fonts/DroidSans-Bold.ttf" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/fonts/DroidSans-Bold.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/fonts/DroidSans.ttf" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/fonts/DroidSans.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/collapse.gif" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/collapse.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/expand.gif" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/expand.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/explorer_icons.png" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/explorer_icons.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/favicon-16x16.png" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/favicon-16x16.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/favicon-32x32.png" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/favicon-32x32.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/favicon.ico" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/logo_small.png" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/logo_small.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/pet_store_api.png" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/pet_store_api.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/throbber.gif" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/throbber.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/images/wordnik_api.png" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/images/wordnik_api.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom-war.xml" afterPath="$PROJECT_DIR$/pom-war.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/StudentApplication.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/StudentApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/annotation/SysLog.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/annotation/SysLog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/aspect/RedisAspect.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/aspect/RedisAspect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/aspect/SysLogAspect.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/aspect/SysLogAspect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/exception/RRException.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/exception/RRException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/exception/RRExceptionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/exception/RRExceptionHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/ConfigConstant.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/ConfigConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/Constant.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/Constant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/DateUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/DateUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/HttpContextUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/HttpContextUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/IPUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/IPUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/MapUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/MapUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/PageUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/PageUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/Query.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/Query.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/R.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/RedisKeys.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/RedisKeys.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/RedisUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/RedisUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/ShiroUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/ShiroUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/utils/SpringContextUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/utils/SpringContextUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/validator/Assert.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/validator/Assert.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/validator/ValidatorUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/validator/ValidatorUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/AddGroup.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/AddGroup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/AliyunGroup.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/AliyunGroup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/Group.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/Group.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/QcloudGroup.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/QcloudGroup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/QiniuGroup.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/QiniuGroup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/UpdateGroup.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/validator/group/UpdateGroup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/xss/HTMLFilter.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/xss/HTMLFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/xss/SQLFilter.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/xss/SQLFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/xss/XssFilter.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/xss/XssFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/common/xss/XssHttpServletRequestWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/common/xss/XssHttpServletRequestWrapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/config/CorsConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/config/CorsConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/config/DemoConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/config/DemoConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/config/FilterConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/config/FilterConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/config/KaptchaConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/config/KaptchaConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/config/MybatisPlusConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/config/MybatisPlusConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/config/RedisConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/config/RedisConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/config/ShiroConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/config/ShiroConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/config/SwaggerConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/config/SwaggerConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/config/WebConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/config/WebConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/datasources/DataSourceNames.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/datasources/DataSourceNames.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/datasources/DynamicDataSource.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/datasources/DynamicDataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/datasources/DynamicDataSourceConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/datasources/DynamicDataSourceConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/datasources/annotation/DataSource.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/datasources/annotation/DataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/datasources/aspect/DataSourceAspect.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/datasources/aspect/DataSourceAspect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/annotation/Login.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/annotation/Login.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/annotation/LoginUser.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/annotation/LoginUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/config/WebMvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/config/WebMvcConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/controller/AppLoginController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/controller/AppLoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/controller/AppRegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/controller/AppRegisterController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/controller/AppTestController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/controller/AppTestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/dao/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/entity/UserEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/entity/UserEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/form/LoginForm.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/form/LoginForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/form/RegisterForm.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/form/RegisterForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/interceptor/AuthorizationInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/interceptor/AuthorizationInterceptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/resolver/LoginUserHandlerMethodArgumentResolver.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/resolver/LoginUserHandlerMethodArgumentResolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/service/impl/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/app/utils/JwtUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/app/utils/JwtUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/config/ScheduleConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/config/ScheduleConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/controller/ScheduleJobController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/controller/ScheduleJobController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/controller/ScheduleJobLogController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/controller/ScheduleJobLogController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/dao/ScheduleJobDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/dao/ScheduleJobDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/dao/ScheduleJobLogDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/dao/ScheduleJobLogDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/entity/ScheduleJobEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/entity/ScheduleJobEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/entity/ScheduleJobLogEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/entity/ScheduleJobLogEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/service/ScheduleJobLogService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/service/ScheduleJobLogService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/service/ScheduleJobService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/service/ScheduleJobService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/service/impl/ScheduleJobLogServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/service/impl/ScheduleJobLogServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/service/impl/ScheduleJobServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/service/impl/ScheduleJobServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/task/TestTask.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/task/TestTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/utils/ScheduleJob.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/utils/ScheduleJob.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/utils/ScheduleRunnable.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/utils/ScheduleRunnable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/job/utils/ScheduleUtils.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/job/utils/ScheduleUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/AliyunCloudStorageService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/AliyunCloudStorageService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/CloudStorageConfig.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/CloudStorageConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/CloudStorageService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/CloudStorageService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/OSSFactory.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/OSSFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/QcloudCloudStorageService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/QcloudCloudStorageService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/QiniuCloudStorageService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/cloud/QiniuCloudStorageService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/controller/SysOssController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/controller/SysOssController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/dao/SysOssDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/dao/SysOssDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/entity/SysOssEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/entity/SysOssEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/service/SysOssService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/service/SysOssService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/service/impl/SysOssServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/oss/service/impl/SysOssServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/AbstractController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/AbstractController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysConfigController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysConfigController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysLogController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysLogController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysLoginController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysLoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysMenuController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysMenuController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysRoleController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysRoleController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysUserController.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/controller/SysUserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysCaptchaDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysCaptchaDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysConfigDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysConfigDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysLogDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysLogDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysMenuDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysMenuDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysRoleDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysRoleDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysRoleMenuDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysRoleMenuDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysUserDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysUserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysUserRoleDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysUserRoleDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysUserTokenDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/dao/SysUserTokenDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysCaptchaEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysCaptchaEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysConfigEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysConfigEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysLogEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysLogEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysMenuEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysMenuEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysRoleEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysRoleEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysRoleMenuEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysRoleMenuEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysUserEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysUserEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysUserRoleEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysUserRoleEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysUserTokenEntity.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/entity/SysUserTokenEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/form/PasswordForm.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/form/PasswordForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/form/SysLoginForm.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/form/SysLoginForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/oauth2/OAuth2Filter.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/oauth2/OAuth2Filter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/oauth2/OAuth2Realm.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/oauth2/OAuth2Realm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/oauth2/OAuth2Token.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/oauth2/OAuth2Token.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/oauth2/TokenGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/oauth2/TokenGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/redis/SysConfigRedis.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/redis/SysConfigRedis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/ShiroService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/ShiroService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysCaptchaService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysCaptchaService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysConfigService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysConfigService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysLogService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysLogService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysMenuService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysMenuService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysRoleMenuService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysRoleMenuService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysRoleService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysRoleService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysUserRoleService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysUserRoleService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysUserService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysUserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysUserTokenService.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/SysUserTokenService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/ShiroServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/ShiroServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysCaptchaServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysCaptchaServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysConfigServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysConfigServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysLogServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysLogServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysMenuServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysMenuServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysRoleMenuServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysRoleMenuServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysRoleServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysRoleServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysUserRoleServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysUserRoleServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysUserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysUserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysUserTokenServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/student/modules/sys/service/impl/SysUserTokenServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application-prod.yml" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application-test.yml" afterPath="$PROJECT_DIR$/src/main/resources/application-test.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/banner.txt" afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/app/UserDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/app/UserDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/job/ScheduleJobDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/job/ScheduleJobDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/job/ScheduleJobLogDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/job/ScheduleJobLogDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/oss/SysOssDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/oss/SysOssDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysConfigDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysConfigDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysLogDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysLogDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysMenuDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysMenuDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysRoleDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysRoleDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysRoleMenuDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysRoleMenuDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysUserDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysUserDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysUserRoleDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysUserRoleDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysUserTokenDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sys/SysUserTokenDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/css/print.css" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/css/print.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/css/reset.css" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/css/reset.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/css/screen.css" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/css/screen.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/css/style.css" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/css/typography.css" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/css/typography.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/index.yaml" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/index.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lang/en.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lang/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lang/translator.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lang/translator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lang/zh-cn.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lang/zh-cn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/backbone-min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/backbone-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/es5-shim.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/es5-shim.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/handlebars-4.0.5.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/handlebars-4.0.5.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/highlight.9.1.0.pack.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/highlight.9.1.0.pack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/highlight.9.1.0.pack_extended.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/highlight.9.1.0.pack_extended.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jquery-1.8.0.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jquery-1.8.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jquery.ba-bbq.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jquery.ba-bbq.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jquery.slideto.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jquery.slideto.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jquery.wiggle.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jquery.wiggle.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/js-yaml.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/js-yaml.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jsoneditor.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/jsoneditor.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/lodash.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/lodash.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/marked.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/marked.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/object-assign-pollyfill.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/object-assign-pollyfill.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/sanitize-html.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/sanitize-html.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/swagger-oauth.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/lib/swagger-oauth.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/o2c.html" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/o2c.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/oauth2-redirect.html" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/oauth2-redirect.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui-bundle.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui-bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui-bundle.js.map" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui-bundle.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui-standalone-preset.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui-standalone-preset.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui-standalone-preset.js.map" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui-standalone-preset.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.css" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.css.map" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.js.map" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/swagger/swagger-ui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/io/student/DynamicDataSourceTest.java" afterPath="$PROJECT_DIR$/src/test/java/io/student/DynamicDataSourceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/io/student/JwtTest.java" afterPath="$PROJECT_DIR$/src/test/java/io/student/JwtTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/io/student/RedisTest.java" afterPath="$PROJECT_DIR$/src/test/java/io/student/RedisTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/io/student/service/DataSourceTestService.java" afterPath="$PROJECT_DIR$/src/test/java/io/student/service/DataSourceTestService.java" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="StudentApplication.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/student/StudentApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="enabledProfiles">
+      <list>
+        <option value="dev" />
+      </list>
+    </option>
+    <option name="disabledProfiles">
+      <list>
+        <option value="test" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="20" />
+    <option name="y" value="56" />
+    <option name="width" value="1260" />
+    <option name="height" value="692" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="student_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentMental" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="student_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentMental" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="student_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentMental" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="student_service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StudentMental" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="student" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.StudentApplication">
+    <configuration default="false" name="StudentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="io.student.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="io.student.StudentApplication" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="student_service" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="student_service" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.StudentApplication" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.StudentApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e452d3e8-1822-4033-9590-68441561880f" name="Default" comment="" />
+      <created>1592825279934</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592825279934</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="20" y="56" width="1260" height="692" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905295" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52969503" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/student/StudentApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

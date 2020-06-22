@@ -37,6 +37,18 @@ public class SysUserController extends AbstractController {
 	private SysUserRoleService sysUserRoleService;
 
 
+	
+	@GetMapping("/dict")
+	public R dict(@RequestParam Map<String, Object> params)
+	{
+		if (getUserId() != Constant.SUPER_ADMIN) {
+		params.put("teacherId", "1");
+	}
+		return R.ok().put("data", sysUserService.dict(params));
+	}
+	
+	
+	
 	/**
 	 * 所有用户列表
 	 */
@@ -45,7 +57,7 @@ public class SysUserController extends AbstractController {
 	public R list(@RequestParam Map<String, Object> params){
 		//只有超级管理员，才能查看所有管理员列表
 		if(getUserId() != Constant.SUPER_ADMIN){
-			params.put("createUserId", getUserId());
+			params.put("createUserId",String.valueOf(getUserId()));
 		}
 		PageUtils page = sysUserService.queryPage(params);
 
@@ -88,8 +100,9 @@ public class SysUserController extends AbstractController {
 	@GetMapping("/info/{userId}")
 	@RequiresPermissions("sys:user:info")
 	public R info(@PathVariable("userId") Long userId){
-		SysUserEntity user = sysUserService.selectById(userId);
-		
+		//SysUserEntity user = sysUserService.selectById(userId);
+		//增加部门
+		SysUserEntity user = sysUserService.queryObject(userId);
 		//获取用户所属的角色列表
 		List<Long> roleIdList = sysUserRoleService.queryRoleIdList(userId);
 		user.setRoleIdList(roleIdList);

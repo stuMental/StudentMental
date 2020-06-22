@@ -33,13 +33,14 @@ public class ScheduleRunnable implements Runnable {
 	private Object target;
 	private Method method;
 	private String params;
+	private String slogpath;
 	
-	public ScheduleRunnable(String beanName, String methodName, String params) throws NoSuchMethodException, SecurityException {
+	public ScheduleRunnable(String beanName, String methodName, String params,String logpath) throws NoSuchMethodException, SecurityException {
 		this.target = SpringContextUtils.getBean(beanName);
 		this.params = params;
-		
+		this.slogpath=logpath;
 		if(StringUtils.isNotBlank(params)){
-			this.method = target.getClass().getDeclaredMethod(methodName, String.class);
+			this.method = target.getClass().getDeclaredMethod(methodName, String.class,String.class);
 		}else{
 			this.method = target.getClass().getDeclaredMethod(methodName);
 		}
@@ -50,7 +51,7 @@ public class ScheduleRunnable implements Runnable {
 		try {
 			ReflectionUtils.makeAccessible(method);
 			if(StringUtils.isNotBlank(params)){
-				method.invoke(target, params);
+				method.invoke(target, params,slogpath);
 			}else{
 				method.invoke(target);
 			}

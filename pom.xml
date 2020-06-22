@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.student</groupId>
-	<artifactId>student_bak</artifactId>
+	<artifactId>student_service</artifactId>
 	<version>2.1.0</version>
 	<packaging>jar</packaging>
-	<description>student_bak</description>
+	<description>student_service</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -20,7 +21,7 @@
 		<java.version>1.8</java.version>
 		<mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>
 		<mybatisplus.version>2.2.0</mybatisplus.version>
-		<mysql.version>5.1.38</mysql.version>
+		<mysql.version>5.1.44</mysql.version>
 		<mssql.version>4.0</mssql.version>
 		<oracle.version>11.2.0.3</oracle.version>
 		<druid.version>1.1.10</druid.version>
@@ -41,7 +42,7 @@
 		<fastjson.version>1.2.47</fastjson.version>
 		<hutool.version>4.1.1</hutool.version>
 
-		<!--wagon plugin 配置-->
+		<!--wagon plugin 配置 -->
 		<service-path>/work/student</service-path>
 		<pack-name>${project.artifactId}-${project.version}.jar</pack-name>
 		<remote-addr>192.168.1.10:22</remote-addr>
@@ -50,6 +51,21 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -76,11 +92,11 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-devtools</artifactId>-->
-			<!--<optional>true</optional>-->
-		<!--</dependency>-->
+		<!--<dependency> -->
+		<!--<groupId>org.springframework.boot</groupId> -->
+		<!--<artifactId>spring-boot-devtools</artifactId> -->
+		<!--<optional>true</optional> -->
+		<!--</dependency> -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatisplus-spring-boot-starter</artifactId>
@@ -96,23 +112,23 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
 		</dependency>
-		 <!--oracle驱动-->
-		<!--<dependency>-->
-			<!--<groupId>com.oracle</groupId>-->
-			<!--<artifactId>ojdbc6</artifactId>-->
-			<!--<version>${oracle.version}</version>-->
-		<!--</dependency>-->
-		 <!--mssql驱动-->
-		<!--<dependency>-->
-			<!--<groupId>com.microsoft.sqlserver</groupId>-->
-			<!--<artifactId>sqljdbc4</artifactId>-->
-			<!--<version>${mssql.version}</version>-->
-		<!--</dependency>-->
-		 <!--postgresql驱动-->
-		<!--<dependency>-->
-			<!--<groupId>org.postgresql</groupId>-->
-			<!--<artifactId>postgresql</artifactId>-->
-		<!--</dependency>-->
+		<!--oracle驱动 -->
+		<!--<dependency> -->
+		<!--<groupId>com.oracle</groupId> -->
+		<!--<artifactId>ojdbc6</artifactId> -->
+		<!--<version>${oracle.version}</version> -->
+		<!--</dependency> -->
+		<!--mssql驱动 -->
+		<!--<dependency> -->
+		<!--<groupId>com.microsoft.sqlserver</groupId> -->
+		<!--<artifactId>sqljdbc4</artifactId> -->
+		<!--<version>${mssql.version}</version> -->
+		<!--</dependency> -->
+		<!--postgresql驱动 -->
+		<!--<dependency> -->
+		<!--<groupId>org.postgresql</groupId> -->
+		<!--<artifactId>postgresql</artifactId> -->
+		<!--</dependency> -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid-spring-boot-starter</artifactId>
@@ -175,6 +191,11 @@
 			<version>${kaptcha.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>com.qiniu</groupId>
+			<artifactId>qiniu-java-sdk</artifactId>
+			<version>${qiniu.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>${swagger.version}</version>
@@ -183,11 +204,6 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${swagger.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.qiniu</groupId>
-			<artifactId>qiniu-java-sdk</artifactId>
-			<version>${qiniu.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.aliyun.oss</groupId>
@@ -235,6 +251,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<fork>true</fork>
 				</configuration>
@@ -256,13 +279,14 @@
 					<url><![CDATA[scp://${remote-username}:${remote-passwd}@${remote-addr}${service-path}]]></url>
 					<commands>
 						<!-- Kill Old Process -->
-						<command>kill -9 `ps -ef |grep ${project.artifactId}.jar|grep -v "grep" |awk '{print $2}'`</command>
-						<!-- Restart jar package，write result into student_bak.log -->
-						<command><![CDATA[nohup java -jar ${service-path}/${pack-name} --spring.profiles.active=test > ${service-path}/student_bak.log 2>&1 & ]]></command>
+						<command>kill -9 `ps -ef |grep ${project.artifactId}.jar|grep -v
+							"grep" |awk '{print $2}'`</command>
+						<!-- Restart jar package，write result into student_service.log -->
+						<command><![CDATA[nohup java -jar ${service-path}/${pack-name} --spring.profiles.active=test > ${service-path}/student_service.log 2>&1 & ]]></command>
 						<command><![CDATA[netstat -nptl]]></command>
 						<command><![CDATA[ps -ef | grep java | grep -v grep]]></command>
 					</commands>
-					<!-- 运行命令 mvn clean package wagon:upload-single wagon:sshexec-->
+					<!-- 运行命令 mvn clean package wagon:upload-single wagon:sshexec -->
 					<displayCommandOutputs>true</displayCommandOutputs>
 				</configuration>
 			</plugin>
@@ -271,14 +295,14 @@
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.14</version>
-				<!--<executions>-->
-					<!--<execution>-->
-						<!--<phase>package</phase>-->
-						<!--<goals>-->
-							<!--<goal>build</goal>-->
-						<!--</goals>-->
-					<!--</execution>-->
-				<!--</executions>-->
+				<!--<executions> -->
+				<!--<execution> -->
+				<!--<phase>package</phase> -->
+				<!--<goals> -->
+				<!--<goal>build</goal> -->
+				<!--</goals> -->
+				<!--</execution> -->
+				<!--</executions> -->
 				<configuration>
 					<imageName>student/bak</imageName>
 					<dockerDirectory>${project.basedir}</dockerDirectory>
@@ -319,4 +343,31 @@
 		</pluginRepository>
 	</pluginRepositories>
 
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<spring.profiles.active>dev</spring.profiles.active>
+				<profileActive>dev</profileActive>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>test</spring.profiles.active>
+				<profileActive>test</profileActive>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<spring.profiles.active>prod</spring.profiles.active>
+				<profileActive>prod</profileActive>
+			</properties>
+		</profile>
+	</profiles>
 </project>

@@ -19,6 +19,9 @@ public interface SysUserService extends IService<SysUserEntity> {
 
 	PageUtils queryPage(Map<String, Object> params);
 
+	SysUserEntity queryObject(Long userId);
+	
+	
 	/**
 	 * 查询用户的所有权限
 	 * @param userId  用户ID
@@ -57,4 +60,6 @@ public interface SysUserService extends IService<SysUserEntity> {
 	 * @param newPassword  新密码
 	 */
 	boolean updatePassword(Long userId, String password, String newPassword);
+	
+	List<Map<String, Object>> dict(Map<String, Object> param);
 }

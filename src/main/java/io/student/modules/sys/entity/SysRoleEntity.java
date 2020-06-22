@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -34,6 +36,17 @@ public class SysRoleEntity implements Serializable {
 	private String roleName;
 
 	/**
+	 * 部门ID
+	 */
+	@NotNull(message="部门不能为空")
+	private Long deptId;
+
+	/**
+	 * 部门名称
+	 */
+	@TableField(exist=false)
+	private String deptName;
+	/**
 	 * 备注
 	 */
 	private String remark;
@@ -46,6 +59,8 @@ public class SysRoleEntity implements Serializable {
 	@TableField(exist=false)
 	private List<Long> menuIdList;
 	
+	@TableField(exist=false)
+	private List<Long> deptIdList;
 	/**
 	 * 创建时间
 	 */
@@ -107,6 +122,21 @@ public class SysRoleEntity implements Serializable {
 		this.createTime = createTime;
 	}
 
+	public Long getDeptId() {
+		return deptId;
+	}
+
+	public void setDeptId(Long deptId) {
+		this.deptId = deptId;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
 	public List<Long> getMenuIdList() {
 		return menuIdList;
 	}
@@ -122,5 +152,11 @@ public class SysRoleEntity implements Serializable {
 	public void setCreateUserId(Long createUserId) {
 		this.createUserId = createUserId;
 	}
-	
+	public List<Long> getDeptIdList() {
+		return deptIdList;
+	}
+
+	public void setDeptIdList(List<Long> deptIdList) {
+		this.deptIdList = deptIdList;
+	}
 }

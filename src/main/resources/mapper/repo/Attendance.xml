@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">    
+<mapper namespace="io.student.modules.eyereport.dao.AttendanceDao">
+
+
+<select id="getabsencename" resultType="java.util.HashMap">
+SELECT
+	CONCAT(
+		SUBSTR(t.start_time, 1, 5),
+		'_',
+		SUBSTR(t.end_time, 1, 5)
+	) AS time_grap,
+	t.course_name,
+	count(t.student_number) AS absence,
+    group_concat(t.student_name order by t.student_name asc) as absencename
+FROM
+	school_student_attendance_info t
+where t.dt=#{date}
+<if test="coursename !=null">
+and t.course_name=#{coursename}
+</if>
+<if test="college_name != null ">
+and t.college_name=#{college_name}
+</if>
+<if test="grade_name != null ">
+and t.grade_name=#{grade_name}
+</if>
+<if test="class_name != null ">
+and t.class_name=#{class_name}
+</if>
+group by time_grap,t.course_name
+order by t.start_time asc
+</select>
+
+<select id="getattendancename" resultType="java.util.HashMap">
+SELECT
+	CONCAT(
+		SUBSTR(t.start_time, 1, 5),
+		'_',
+		SUBSTR(t.end_time, 1, 5)
+	) AS time_grap,
+	t.course_name,
+	count(t.student_number) AS exisnum,
+    group_concat(t.student_name order by t.student_name asc) as attendancename
+FROM
+	school_student_attendance_exist_info t
+where t.dt=#{date}
+<if test="coursename !=null">
+and t.course_name=#{coursename}
+</if>
+<if test="college_name != null ">
+and t.college_name=#{college_name}
+</if>
+<if test="grade_name != null ">
+and t.grade_name=#{grade_name}
+</if>
+<if test="class_name != null ">
+and t.class_name=#{class_name}
+</if>
+group by time_grap,t.course_name
+order by t.start_time asc
+</select>
+
+<select id="getstudentlist" resultType="java.util.HashMap">
+select 
+t.course_name as courseName,t.course_id as courseId
+from school_student_attendance_exist_info t
+where 1=1
+<if test="college_name != null ">
+and t.college_name=#{college_name}
+</if>
+<if test="grade_name != null ">
+and t.grade_name=#{grade_name}
+</if>
+<if test="class_name != null ">
+and t.class_name=#{class_name}
+</if>
+<if test="date != null ">
+and t.dt=#{date}
+</if>
+<if test="teacher_id != null ">
+and t.teacher_id=#{teacher_id}
+</if>
+group by t.course_name,t.course_id
+</select>
+
+<select id="getstudentlist2" resultType="java.util.HashMap">
+select 
+t.course_name as courseName,t.course_id as courseId
+from school_student_course_info t
+where 1=1
+<if test="college_name != null ">
+and t.college_name=#{college_name}
+</if>
+<if test="grade_name != null ">
+and t.grade_name=#{grade_name}
+</if>
+<if test="class_name != null ">
+and t.class_name=#{class_name}
+</if>
+<if test="date != null ">
+and t.weekday=dayofweek(#{date})
+</if>
+<if test="teacher_id != null ">
+and t.teacher_id=#{teacher_id}
+</if>
+group by t.course_name,t.course_id
+</select>
+
+
+
+
+
+</mapper>

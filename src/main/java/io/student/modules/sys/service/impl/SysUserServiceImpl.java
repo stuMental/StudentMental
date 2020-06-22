@@ -3,12 +3,15 @@ package io.student.modules.sys.service.impl;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+
+import io.student.common.annotation.DataFilter;
 import io.student.common.exception.RRException;
 import io.student.common.utils.Constant;
 import io.student.common.utils.PageUtils;
 import io.student.common.utils.Query;
 import io.student.modules.sys.dao.SysUserDao;
 import io.student.modules.sys.entity.SysUserEntity;
+import io.student.modules.sys.service.SysDeptService;
 import io.student.modules.sys.service.SysRoleService;
 import io.student.modules.sys.service.SysUserRoleService;
 import io.student.modules.sys.service.SysUserService;
@@ -36,21 +39,48 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 	private SysUserRoleService sysUserRoleService;
 	@Autowired
 	private SysRoleService sysRoleService;
-
+	@Autowired
+	private SysDeptService SysDeptService;
+	@Autowired
+	private SysUserDao sysUserDao;
+	
+	@Override
+	public SysUserEntity queryObject(Long userId)
+	{
+		return sysUserDao.queryObject(userId);
+	}
+	
+	
 	@Override
 	public PageUtils queryPage(Map<String, Object> params) {
-		String username = (String)params.get("username");
+	/*	String username = (String)params.get("username");
 		Long createUserId = (Long)params.get("createUserId");
 
 		Page<SysUserEntity> page = this.selectPage(
 			new Query<SysUserEntity>(params).getPage(),
 			new EntityWrapper<SysUserEntity>()
-				.like(StringUtils.isNotBlank(username),"username", username)
-				.eq(createUserId != null,"create_user_id", createUserId)
+				.setSqlSelect(" sys_user.*, (select d.name from sys_dept d where d.dept_id = sys_user.dept_id)  as dept_name ")
+				.like(StringUtils.isNotBlank(username),"sys_user.username", username)
+				.eq(createUserId != null,"sys_user.create_user_id", createUserId)
 		);
-
-		return new PageUtils(page);
+*/
+		Query query = new Query(params);
+		
+		return new PageUtils(queryList(params),queryTotal(params),query.getLimit(), query.getCurrPage());
 	}
+	
+	
+	@DataFilter(tableAlias = "u", user = false)
+	private List<SysUserEntity> queryList(Map<String, Object> map){
+		return sysUserDao.queryList(map);
+	}
+	
+	@DataFilter(tableAlias = "u", user = false)
+	private int queryTotal(Map<String, Object> map) {
+		return sysUserDao.queryTotal(map);
+	}
+	
+	
 
 	@Override
 	public List<String> queryAllPerms(Long userId) {
@@ -87,13 +117,14 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 	@Override
 	@Transactional
 	public void update(SysUserEntity user) {
+		user.setCreateTime(new Date());
 		if(StringUtils.isBlank(user.getPassword())){
 			user.setPassword(null);
 		}else{
 			user.setPassword(new Sha256Hash(user.getPassword(), user.getSalt()).toHex());
 		}
 		this.updateById(user);
-		
+		//this.updateAllColumnById(user);
 		//检查角色是否越权
 		checkRole(user);
 		
@@ -133,5 +164,19 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 		if(!roleIdList.containsAll(user.getRoleIdList())){
 			throw new RRException("新增用户所选角色，不是本人创建");
 		}
+	}
+
+
+	@Override
+	public List<Map<String, Object>> dict(Map<String, Object> param) {
+		String deptId = (String) param.get("deptId");
+		String deptidsString ="";
+		if(StringUtils.isNotBlank(deptId))
+		{
+		 deptidsString = SysDeptService.getSubDeptIdList(Long.valueOf(deptId));
+		param.put("dept_id", deptidsString);
+		}
+		
+		return sysUserDao.dict(param);
 	}
 }

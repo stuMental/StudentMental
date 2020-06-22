@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">    
+<mapper namespace="io.student.modules.eyereport.dao.CourseDao">
+
+<select id="studentall" resultType="java.util.HashMap">
+select  student_number as studentNumber, student_name as studentName from (
+select t.student_number,t.student_name from school_student_course_info t
+left join student_image f
+on(t.student_number=f.student_number)
+where 1=1
+<if test="college_name != null ">
+and t.college_name=#{college_name}
+</if>
+<if test="grade_name != null ">
+and t.grade_name=#{grade_name}
+</if>
+<if test="class_name != null ">
+and t.class_name=#{class_name}
+</if>
+<if test="isphon == 1 ">
+and f.image_id is not null
+</if>
+<if test="isphon == 2 ">
+and f.image_id is  null
+</if>
+<if test="student_number != null and  student_number.trim() != '' ">
+and t.student_number=#{student_number}
+</if>
+group by student_name,student_number
+order by student_number) a
+<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+
+
+</select>
+
+
+<select id="studentalltotal" resultType="int">
+select count(*) from (
+select t.student_number,t.student_name from school_student_course_info t
+left join student_image f
+on(t.student_number=f.student_number)
+where 1=1
+<if test="college_name != null ">
+and t.college_name=#{college_name}
+</if>
+<if test="grade_name != null ">
+and t.grade_name=#{grade_name}
+</if>
+<if test="class_name != null ">
+and t.class_name=#{class_name}
+</if>
+<if test="isphon == 1 ">
+and f.image_id is not null
+</if>
+<if test="isphon == 2 ">
+and f.image_id is  null
+</if>
+<if test="student_number != null  and  student_number.trim() != ''">
+and t.student_number=#{student_number}
+</if>
+group by student_name,student_number
+) a
+</select>
+
+</mapper>

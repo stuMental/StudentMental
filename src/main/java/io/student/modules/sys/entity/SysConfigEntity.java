@@ -32,6 +32,7 @@ import javax.validation.constraints.NotBlank;
 public class SysConfigEntity {
 	@TableId
 	private Long id;
+	private String paramType;
 	@NotBlank(message="参数名不能为空")
 	private String paramKey;
 	@NotBlank(message="参数值不能为空")
@@ -45,6 +46,12 @@ public class SysConfigEntity {
 		this.id = id;
 	}
 
+	public String getParamType() {
+		return paramType;
+	}
+	public void setParamType(String paramType) {
+		this.paramType = paramType;
+	}
 	public String getParamKey() {
 		return paramKey;
 	}

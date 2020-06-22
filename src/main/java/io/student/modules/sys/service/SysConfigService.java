@@ -21,6 +21,7 @@ import com.baomidou.mybatisplus.service.IService;
 import io.student.common.utils.PageUtils;
 import io.student.modules.sys.entity.SysConfigEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,6 +34,13 @@ import java.util.Map;
 public interface SysConfigService extends IService<SysConfigEntity>  {
 
 	PageUtils queryPage(Map<String, Object> params);
+	
+	public List<SysConfigEntity> gettype();
+	public List<SysConfigEntity> getroom();
+	public List<SysConfigEntity> getawardtype();
+	public List<SysConfigEntity> getawardLevel();
+	public List<SysConfigEntity> getcourselist();
+	public List<SysConfigEntity> getmood();
 	
 	/**
 	 * 保存配置信息
@@ -47,7 +55,7 @@ public interface SysConfigService extends IService<SysConfigEntity>  {
 	/**
 	 * 根据key，更新value
 	 */
-	public void updateValueByKey(String key, String value);
+	public void updateValueByKey(String type,String key, String value);
 	
 	/**
 	 * 删除配置信息
@@ -59,13 +67,13 @@ public interface SysConfigService extends IService<SysConfigEntity>  {
 	 * 
 	 * @param key           key
 	 */
-	public String getValue(String key);
+	public String getValue(String Type,String key);
 	
 	/**
 	 * 根据key，获取value的Object对象
 	 * @param key    key
 	 * @param clazz  Object对象
 	 */
-	public <T> T getConfigObject(String key, Class<T> clazz);
+	public <T> T getConfigObject(String Type,String key, Class<T> clazz);
 	
 }

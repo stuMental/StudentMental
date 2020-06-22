@@ -18,15 +18,21 @@ package io.student.modules.sys.controller;
 
 
 import io.student.common.annotation.SysLog;
+import io.student.common.exception.RRException;
 import io.student.common.utils.PageUtils;
 import io.student.common.utils.R;
 import io.student.common.validator.ValidatorUtils;
 import io.student.modules.sys.entity.SysConfigEntity;
 import io.student.modules.sys.service.SysConfigService;
+import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+import sun.misc.Regexp;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Map;
 
 /**
@@ -48,9 +54,43 @@ public class SysConfigController extends AbstractController {
 	@GetMapping("/list")
 	@RequiresPermissions("sys:config:list")
 	public R list(@RequestParam Map<String, Object> params){
+		
 		PageUtils page = sysConfigService.queryPage(params);
 
 		return R.ok().put("page", page);
+	}
+	
+	
+	@GetMapping("typelist")
+	public R TypeList()
+	{
+		return R.ok().put("data", sysConfigService.gettype());
+	}
+	
+	@GetMapping("roomlist")
+	public R roomList()
+	{
+		return R.ok().put("data", sysConfigService.getroom());
+	}
+	@GetMapping("awardtypelist")
+	public R awardtypelist()
+	{
+		return R.ok().put("data", sysConfigService.getawardtype());
+	}
+	@GetMapping("awardLevellist")
+	public R awardLevellist()
+	{
+		return R.ok().put("data", sysConfigService.getawardLevel());
+	}
+	@GetMapping("courselist")
+	public R courselist()
+	{
+		return R.ok().put("data", sysConfigService.getcourselist());
+	}
+	@GetMapping("mood")
+	public R mood()
+	{
+		return R.ok().put("data", sysConfigService.getmood());
 	}
 	
 	
@@ -74,11 +114,36 @@ public class SysConfigController extends AbstractController {
 	public R save(@RequestBody SysConfigEntity config){
 		ValidatorUtils.validateEntity(config);
 
+		if(config.getParamType().equals("mood"))
+		{
+			if(!config.getParamValue().matches("(0\\d{1}|1\\d{1}|2[0-3]):([0-5]\\d{1})-(0\\d{1}|1\\d{1}|2[0-3]):([0-5]\\d{1})"))
+			{
+				throw new RRException("课堂时间格式必须是HH:mi-HH:mi");
+			}
+			if(config.getParamValue().length()!=11)
+			{
+				throw new RRException("课堂时间格式必须是HH:mi-HH:mi");
+			}
+			String dateString[]=config.getParamValue().split("-");
+
+		    SimpleDateFormat myFmt1=new SimpleDateFormat("HH:mm"); 
+			try {
+				if(myFmt1.parse(dateString[0]).after(myFmt1.parse(dateString[1])))
+				{
+					throw  new RRException("开始时间必须小于结束时间");
+				}
+			} catch (ParseException e) {
+				e.printStackTrace();
+				throw  new RRException(e.getMessage());
+			}
+			
+		}
+		
+		
 		sysConfigService.save(config);
 		
 		return R.ok();
 	}
-	
 	/**
 	 * 修改配置
 	 */
@@ -87,7 +152,30 @@ public class SysConfigController extends AbstractController {
 	@RequiresPermissions("sys:config:update")
 	public R update(@RequestBody SysConfigEntity config){
 		ValidatorUtils.validateEntity(config);
-		
+		if(config.getParamType().equals("mood"))
+		{
+			if(!config.getParamValue().matches("(0\\d{1}|1\\d{1}|2[0-3]):([0-5]\\d{1})-(0\\d{1}|1\\d{1}|2[0-3]):([0-5]\\d{1})"))
+			{
+				throw new RRException("课堂时间格式必须是HH:mi-HH:mi");
+			}
+			if(config.getParamValue().length()!=11)
+			{
+				throw new RRException("课堂时间格式必须是HH:mi-HH:mi");
+			}
+			String dateString[]=config.getParamValue().split("-");
+
+		    SimpleDateFormat myFmt1=new SimpleDateFormat("HH:mm"); 
+			try {
+				if(myFmt1.parse(dateString[0]).after(myFmt1.parse(dateString[1])))
+				{
+					throw  new RRException("开始时间必须小于结束时间");
+				}
+			} catch (ParseException e) {
+				e.printStackTrace();
+				throw  new RRException(e.getMessage());
+			}
+			
+		}
 		sysConfigService.update(config);
 		
 		return R.ok();

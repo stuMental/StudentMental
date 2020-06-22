@@ -23,10 +23,14 @@ import io.student.common.utils.R;
 import io.student.modules.sys.entity.SysMenuEntity;
 import io.student.modules.sys.service.ShiroService;
 import io.student.modules.sys.service.SysMenuService;
+import io.student.modules.sys.service.SysUserService;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 
 import java.util.List;
 import java.util.Set;
@@ -45,7 +49,9 @@ public class SysMenuController extends AbstractController {
 	private SysMenuService sysMenuService;
 	@Autowired
 	private ShiroService shiroService;
-
+	@Autowired
+	private SysUserService sysUserService;
+	
 	/**
 	 * 导航菜单
 	 */
@@ -55,6 +61,7 @@ public class SysMenuController extends AbstractController {
 		Set<String> permissions = shiroService.getUserPermissions(getUserId());
 		return R.ok().put("menuList", menuList).put("permissions", permissions);
 	}
+		
 	
 	/**
 	 * 所有菜单列表
@@ -62,7 +69,14 @@ public class SysMenuController extends AbstractController {
 	@GetMapping("/list")
 	@RequiresPermissions("sys:menu:list")
 	public List<SysMenuEntity> list(){
-		List<SysMenuEntity> menuList = sysMenuService.selectList(null);
+		List<SysMenuEntity> menuList=null;
+		
+		if(getUserId() != Constant.SUPER_ADMIN){
+			List<Long> menuIdList = sysUserService.queryAllMenuId(getUserId());
+			menuList=sysMenuService.selectList(new EntityWrapper<SysMenuEntity>().in("menu_id",  StringUtils.join(menuIdList, ",")));
+		}else {
+			 menuList = sysMenuService.selectList(null);
+		}
 		for(SysMenuEntity sysMenuEntity : menuList){
 			SysMenuEntity parentMenuEntity = sysMenuService.selectById(sysMenuEntity.getParentId());
 			if(parentMenuEntity != null){

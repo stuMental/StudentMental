@@ -1,7 +1,7 @@
 version: '2'
 services:
-  student_bak:
-    image: student/bak
+  service:
+    image: student/service
     ports:
       - "8080:8080"
     environment:

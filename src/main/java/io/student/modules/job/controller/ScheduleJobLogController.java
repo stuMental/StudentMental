@@ -22,8 +22,12 @@ import io.student.modules.job.entity.ScheduleJobLogEntity;
 import io.student.modules.job.service.ScheduleJobLogService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.net.URLDecoder;
 import java.util.Map;
 
 /**
@@ -58,4 +62,30 @@ public class ScheduleJobLogController {
 		
 		return R.ok().put("log", log);
 	}
+	
+	
+	@GetMapping("loginfo/{logId}")
+	public R log(@PathVariable("logId") long logId)
+	{
+		try {
+		String logpath=URLDecoder.decode(ResourceUtils.getURL("classpath:").getPath(),"utf-8").replace("webapps/student_service/WEB-INF/classes/", "logs/")+String.valueOf(logId)+".log";
+		String text="";
+		FileInputStream io=new FileInputStream(new File(logpath));
+		byte[] buf = new byte[1024];  
+		int length = 0;
+		//循环读取文件内容，输入流中将最多buf.length个字节的数据读入一个buf数组中,返回类型是读取到的字节数。
+		//当文件读取到结尾时返回 -1,循环结束。
+		while((length = io.read(buf)) != -1){   
+		 text=text+new String(buf,0,length);
+		}
+		io.close();
+		
+		return R.ok().put("data", text);
+		
+		}catch (Exception e) {
+			return R.error(e.getMessage());
+		}
+		
+		}
+	
 }

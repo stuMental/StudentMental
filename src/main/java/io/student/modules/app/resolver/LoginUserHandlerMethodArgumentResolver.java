@@ -1,9 +1,5 @@
 package io.student.modules.app.resolver;
 
-import io.student.modules.app.annotation.LoginUser;
-import io.student.modules.app.entity.UserEntity;
-import io.student.modules.app.interceptor.AuthorizationInterceptor;
-import io.student.modules.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
@@ -13,20 +9,25 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
+import io.student.modules.app.annotation.LoginUser;
+import io.student.modules.app.interceptor.AuthorizationInterceptor;
+import io.student.modules.sys.entity.SysUserEntity;
+import io.student.modules.sys.service.SysUserService;
+
 /**
  * 有@LoginUser注解的方法参数，注入当前登录用户
- * @author duanxin
- * @email sxz147@163.com
+ * @author chenshun
+ * @email sunlightcs@gmail.com
  * @date 2017-03-23 22:02
  */
 @Component
 public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
     @Autowired
-    private UserService userService;
+    private SysUserService userService;
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-        return parameter.getParameterType().isAssignableFrom(UserEntity.class) && parameter.hasParameterAnnotation(LoginUser.class);
+        return parameter.getParameterType().isAssignableFrom(SysUserEntity.class) && parameter.hasParameterAnnotation(LoginUser.class);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgu
         }
 
         //获取用户信息
-        UserEntity user = userService.selectById((Long)object);
+        SysUserEntity user = userService.queryObject((Long)object);
 
         return user;
     }

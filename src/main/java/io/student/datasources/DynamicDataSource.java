@@ -11,7 +11,7 @@ import java.util.Map;
  * @email sxz147@163.com
  * @date 2017/8/19 1:03
  */
-public class DynamicDataSource extends AbstractRoutingDataSource {
+public class DynamicDataSource extends  AbstractRoutingDataSource {
     private static final ThreadLocal<String> contextHolder = new ThreadLocal<>();
 
     public DynamicDataSource(DataSource defaultTargetDataSource, Map<Object, Object> targetDataSources) {

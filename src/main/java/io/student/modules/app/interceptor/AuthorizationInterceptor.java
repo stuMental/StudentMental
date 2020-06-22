@@ -3,14 +3,23 @@ package io.student.modules.app.interceptor;
 
 import io.jsonwebtoken.Claims;
 import io.student.common.exception.RRException;
+import io.student.common.utils.MacAddress;
+import io.student.common.utils.R;
+import io.student.common.utils.SecurityUtil;
+import io.student.common.utils.StringUtil;
 import io.student.modules.app.utils.JwtUtils;
+import io.student.modules.sys.service.SysConfigService;
 import io.student.modules.app.annotation.Login;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,13 +32,19 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Component
 public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
+	private Logger logger = LoggerFactory.getLogger(getClass());
     @Autowired
     private JwtUtils jwtUtils;
+
+	@Autowired
+	private SysConfigService sysConfigService;
 
     public static final String USER_KEY = "userId";
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    	
+    	
         Login annotation;
         if(handler instanceof HandlerMethod) {
             annotation = ((HandlerMethod) handler).getMethodAnnotation(Login.class);
@@ -37,9 +52,12 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
             return true;
         }
 
-        if(annotation == null){
+        if(annotation != null){
             return true;
         }
+        
+       
+        
 
         //获取用户凭证
         String token = request.getHeader(jwtUtils.getHeader());
