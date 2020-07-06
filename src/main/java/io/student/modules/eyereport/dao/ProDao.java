@@ -10,6 +10,11 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface ProDao  {
 	List<Map<String, Object>> getktztxxfx(Map<String, Object> param);
+	List<Map<String, Object>> getrtch(Map<String, Object> param);
+	List<Map<String, Object>> getssxw(Map<String, Object> param);
+	List<Map<String, Object>> getxsxw(Map<String, Object> param);
+	List<Map<String, Object>> getjsxw(Map<String, Object> param);
+	List<Map<String, Object>> getqxzt(Map<String, Object> param);
 
 	List<Map<String, Object>> getkthdx(Map<String, Object> param);
 	List<Map<String, Object>> getkthdxqx(Map<String, Object> param);

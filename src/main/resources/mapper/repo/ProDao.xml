@@ -245,6 +245,128 @@ WHERE
 	AND dt &lt;= date_add( #{dt}, INTERVAL  60 DAY ) 
 </select>
 
+<select id="getrtch" resultType="java.util.HashMap">
+	SELECT
+	ROUND(AVG(rt), 2) AS rt, ROUND(AVG(ch), 2) AS ch
+	FROM teacher_course_type_daily
+	WHERE teacher_id = #{teacher_id}
+	AND course_id = #{course_id}
+	AND college_name = #{college_name}
+	AND grade_name = #{grade_name}
+	AND class_name = #{class_name}
+	and dt &gt;=#{date1}
+	and dt &lt;=#{date2}
+</select>
+
+<select id="getssxw" resultType="java.util.HashMap">
+	SELECT
+	`type`
+	FROM teacher_student_behavior_result
+	WHERE teacher_id = #{teacher_id}
+	AND course_id = #{course_id}
+	AND college_name = #{college_name}
+	AND grade_name = #{grade_name}
+	AND class_name = #{class_name}
+	AND dt >= #{date1}
+	AND dt &lt;= #{date2}
+	ORDER BY unix_timestamp ASC;
+</select>
+
+<select id="getxsxw" resultType="java.util.HashMap">
+	SELECT
+	stu.`action` AS `action`,
+	ROUND(stu.action_cnt / tmp.total, 4) AS percentage
+	FROM (
+	SELECT
+	`action`,
+	count(1) AS action_cnt
+	FROM teacher_student_behavior_result
+	WHERE `type` = 1
+	AND teacher_id = #{teacher_id}
+	AND course_id = #{course_id}
+	AND college_name = #{college_name}
+	AND grade_name = #{grade_name}
+	AND class_name = #{class_name}
+	AND dt >= #{date1}
+	AND dt &lt;= #{date2}
+	GROUP BY `action`
+	) AS stu JOIN (
+	SELECT
+	COUNT(1) AS total
+	FROM teacher_student_behavior_result
+	WHERE teacher_id = #{teacher_id}
+	AND course_id = #{course_id}
+	AND college_name = #{college_name}
+	AND grade_name = #{grade_name}
+	AND class_name = #{class_name}
+	AND dt >= #{date1}
+	AND dt &lt;= #{date2}
+	) AS tmp;
+</select>
+
+<select id="getjsxw" resultType="java.util.HashMap">
+	SELECT
+	tea.`action` AS `action`,
+	ROUND(tea.action_cnt / tmp.total, 4) AS percentage
+	FROM (
+	SELECT
+	`action`,
+	count(1) AS action_cnt
+	FROM teacher_student_behavior_result
+	WHERE `type` = 0 AND teacher_id = #{teacher_id}
+	AND course_id = #{course_id}
+	AND college_name = #{college_name}
+	AND grade_name = #{grade_name}
+	AND class_name = #{class_name}
+	AND dt >= #{date1}
+	AND dt &lt;= #{date2}
+	GROUP BY `action`
+	) AS tea JOIN (
+	SELECT
+	COUNT(1) AS total
+	FROM teacher_student_behavior_result
+	WHERE teacher_id = #{teacher_id}
+	AND course_id = #{course_id}
+	AND college_name = #{college_name}
+	AND grade_name = #{grade_name}
+	AND class_name = #{class_name}
+	AND dt >= #{date1}
+	AND dt &lt;= #{date2}
+	) AS tmp;
+</select>
+
+<select id="getqxzt" resultType="java.util.HashMap">
+	SELECT
+	ROUND(emotion.happy_cnt / tmp.total, 4) AS happy_rate,
+	ROUND(emotion.normal_cnt / tmp.total, 4) AS normal_rate,
+	ROUND(emotion.angry_cnt / tmp.total, 4) AS angry_rate
+	FROM (
+	SELECT
+	SUM(happy) AS happy_cnt,
+	SUM(normal) AS normal_cnt,
+	SUM(angry) AS angry_cnt
+	FROM teacher_emotion_daily
+	WHERE teacher_id = #{teacher_id}
+	AND course_id = #{course_id}
+	AND college_name = #{college_name}
+	AND grade_name = #{grade_name}
+	AND class_name = #{class_name}
+	AND dt >= #{date1}
+	AND dt &lt;= #{date2}
+	) AS emotion JOIN (
+	SELECT
+	SUM(happy + normal + angry) AS total
+	FROM teacher_emotion_daily
+	WHERE teacher_id = #{teacher_id}
+	AND course_id = #{course_id}
+	AND college_name = #{college_name}
+	AND grade_name = #{grade_name}
+	AND class_name = #{class_name}
+	AND dt >= #{date1}
+	AND dt &lt;= #{date2}
+	) tmp;
+</select>
+
 <select id="getstatistics" resultType="java.util.HashMap">
 SELECT * FROM school_student_count_people_rtl ORDER BY room_addr ASC
 </select>
