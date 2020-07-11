@@ -26,23 +26,25 @@ public class TeacherController extends AbstractController {
     @Autowired
     private TeacherService teacherService;
 
-//    @PostMapping("/type")
+    // 教师报表
     @RequestMapping("/type")
     public R getType(@RequestBody Map<String,Object> param) {
         param.putAll(sysDeptService.getgrade(Long.parseLong(param.get("deptid").toString())));
-        System.out.println("22222" + param);
-//        结果
+        // 结果
         Map<String, Object> result = new HashMap<>();
         // 取rt-ch图
         result.put("rtch", teacherService.getrtch(param));
-//        取师生行为序列图
+        // 取师生行为序列图
         result.put("ssxw", teacherService.getssxw(param));
-//        学生行为分析图
+        // 学生行为分析图
         result.put("xsxw", teacherService.getxsxw(param));
-//        教师行为分析
+        // 教师行为分析
         result.put("jsxw", teacherService.getjsxw(param));
         result.put("qxzt", teacherService.getqxzt(param));
-        System.out.println(result);
+        result.put("jxqxline", teacherService.getjxqxline(param));
+        result.put("jxzt", teacherService.getjxzt(param));
+        result.put("jxztline", teacherService.getjxztline(param));
+//        System.out.println(result);
         return R.ok().put("data", result);
     }
 

@@ -62,4 +62,6 @@ public interface SysUserService extends IService<SysUserEntity> {
 	boolean updatePassword(Long userId, String password, String newPassword);
 	
 	List<Map<String, Object>> dict(Map<String, Object> param);
+	//	获取所有教师列表
+	List<Map<String, Object>> getTeacherList(Map<String, Object> param);
 }

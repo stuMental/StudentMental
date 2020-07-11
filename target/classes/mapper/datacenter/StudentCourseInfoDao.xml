@@ -8,5 +8,14 @@
         student_number=#{student_id}
     </delete>
 
+    <select id="getCourseByTeacher" resultType="java.util.HashMap">
+        select course_id, course_name
+        from school_student_course_info
+        where teacher_id = #{teacher_id}
+        and college_name = #{college_name}
+        and grade_name = #{grade_name}
+        and class_name = #{class_name}
+        group by course_id, course_name order by course_id ASC;
+    </select>
 
 </mapper>

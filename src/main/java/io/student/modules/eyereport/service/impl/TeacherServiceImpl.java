@@ -49,4 +49,25 @@ public class TeacherServiceImpl implements TeacherService{
     {
         return prodao.getqxzt(param);
     }
+
+    @Override
+    @DataSource(name= DataSourceNames.SECOND)
+    public List<Map<String, Object>> getjxqxline(Map<String, Object> param)
+    {
+        return prodao.getjxqxline(param);
+    }
+
+    @Override
+    @DataSource(name= DataSourceNames.SECOND)
+    public List<Map<String, Object>> getjxzt(Map<String, Object> param)
+    {
+        return prodao.getjxzt(param);
+    }
+
+    @Override
+    @DataSource(name= DataSourceNames.SECOND)
+    public List<Map<String, Object>> getjxztline(Map<String, Object> param)
+    {
+        return prodao.getjxztline(param);
+    }
 }
