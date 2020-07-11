@@ -26,6 +26,8 @@ import io.student.modules.datacenter.service.StudentCourseInfoService;
 import io.student.modules.sys.service.SysConfigService;
 import io.student.modules.sys.service.SysDeptService;
 
+import io.student.modules.datacenter.dao.StudentCourseInfoDao;
+
 @Service("studentcourseinfo")
 public class StudentCourseInfoServiceImpl extends ServiceImpl<StudentCourseInfoDao,StudentCourseInfo> implements StudentCourseInfoService {
 	@Autowired
@@ -33,7 +35,9 @@ public class StudentCourseInfoServiceImpl extends ServiceImpl<StudentCourseInfoD
 	
 	@Autowired
 	private SysConfigService SysConfigService;
-	
+
+	@Autowired
+	private StudentCourseInfoDao studentCourseInfoDao;
 	
 	@Override
 	public PageUtils queryPage(Map<String, Object> params) {
@@ -117,6 +121,12 @@ public class StudentCourseInfoServiceImpl extends ServiceImpl<StudentCourseInfoD
 			returns.add(map);
 		}
 		return returns;
+	}
+
+	@Override
+	public List<Map<String, Object>> getCourseByTeacher(Map<String, Object> param)
+	{
+		return studentCourseInfoDao.getCourseByTeacher(param);
 	}
 
 }

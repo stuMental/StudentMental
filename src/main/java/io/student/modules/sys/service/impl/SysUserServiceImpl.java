@@ -179,4 +179,9 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 		
 		return sysUserDao.dict(param);
 	}
+
+	@Override
+	public List<Map<String, Object>> getTeacherList(Map<String, Object> param) {
+		return sysUserDao.getTeacherList(param);
+	}
 }

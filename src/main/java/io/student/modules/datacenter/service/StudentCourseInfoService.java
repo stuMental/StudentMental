@@ -15,4 +15,5 @@ public interface StudentCourseInfoService  extends IService<StudentCourseInfo>{
 	public void save(StudentCourseInfo studentCourseInfo);
 	public void update(StudentCourseInfo studentCourseInfo);
 	public List<Map<String, Object>> dict(Map<String, Object> params);
+	public List<Map<String, Object>> getCourseByTeacher(Map<String, Object> params);
 }

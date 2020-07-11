@@ -35,6 +35,7 @@ public interface SysUserDao extends BaseDao<SysUserEntity> {
 	
 	
 	List<Map<String,Object>> dict(Map<String, Object> params);
-	
+	List<Map<String,Object>> getTeacherList(Map<String, Object> params);
+
 
 }

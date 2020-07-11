@@ -36,7 +36,12 @@ public class SysUserController extends AbstractController {
 	@Autowired
 	private SysUserRoleService sysUserRoleService;
 
+	//	获取教师列表
+	@RequestMapping("/getTeacherList")
+	public R getTeacherList(@RequestParam Map<String, Object> param) {
 
+		return R.ok().put("data", sysUserService.getTeacherList(param));
+	}
 	
 	@GetMapping("/dict")
 	public R dict(@RequestParam Map<String, Object> params)

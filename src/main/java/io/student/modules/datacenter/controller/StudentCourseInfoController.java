@@ -137,6 +137,7 @@ public class StudentCourseInfoController extends AbstractController {
 		return R.ok();
 	}
 
+	//	教学效果报表：根据班年级和日期获取课程
 	@PostMapping("dict")
 	public R dict(@RequestBody Map<String, Object> params) {
 		if (getUserId() != Constant.SUPER_ADMIN) {
@@ -144,6 +145,13 @@ public class StudentCourseInfoController extends AbstractController {
 		}
 
 		return R.ok().put("data", StudentCourseInfoService.dict(params));
+	}
+
+	//	教师报表页面：根据班年级和教师id获取课程
+	@PostMapping("getCourseByTeacher")
+	public R getCourseByTeacher(@RequestBody Map<String, Object> params) {
+		params.putAll(sysDeptService.getgrade(Long.parseLong(params.get("deptid").toString())));
+		return R.ok().put("data", StudentCourseInfoService.getCourseByTeacher(params));
 	}
 
 	private boolean checkdata(StudentCourseInfo studentCourseInfo) throws RRException {

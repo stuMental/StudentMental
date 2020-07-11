@@ -15,6 +15,9 @@ public interface ProDao  {
 	List<Map<String, Object>> getxsxw(Map<String, Object> param);
 	List<Map<String, Object>> getjsxw(Map<String, Object> param);
 	List<Map<String, Object>> getqxzt(Map<String, Object> param);
+	List<Map<String, Object>> getjxqxline(Map<String, Object> param);
+	List<Map<String, Object>> getjxzt(Map<String, Object> param);
+	List<Map<String, Object>> getjxztline(Map<String, Object> param);
 
 	List<Map<String, Object>> getkthdx(Map<String, Object> param);
 	List<Map<String, Object>> getkthdxqx(Map<String, Object> param);
