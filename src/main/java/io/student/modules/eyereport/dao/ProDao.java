@@ -98,6 +98,7 @@ public interface ProDao  {
 	List<Map<String, Object>> getclsdetailrjgx(Map<String, Object> params);
 	List<Map<String, Object>> getclsdetailxxzt(Map<String, Object> params);
 	List<Map<String, Object>> getclsdetailjszt(Map<String, Object> params);
-	
+	List<Map<String, Object>> getDiagnosisClass(Map<String, Object> params);
+
 	
 }
