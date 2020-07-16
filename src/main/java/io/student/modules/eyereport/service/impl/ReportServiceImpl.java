@@ -453,4 +453,11 @@ public class ReportServiceImpl implements ReportService {
 	{
 		return prodao.getDiagnosisClass(param);
 	}
+
+	@Override
+	@DataSource(name= DataSourceNames.SECOND)
+	public List<Map<String, Object>> getDiagnosisStu(Map<String, Object> param)
+	{
+		return prodao.getDiagnosisStu(param);
+	}
 }

@@ -667,11 +667,11 @@ public class ReportController extends AbstractController {
 	@RequestMapping("/diagnosis")
 	public R getDiagnosis(@RequestBody Map<String, Object> param) {
 		param.putAll(sysDeptService.getgrade(Long.parseLong(param.get("deptid").toString())));
-		System.out.println("aaa" + param);
+//		System.out.println("aaa" + param);
 		Map<String, Object> result = new HashMap<>();
 		result.put("class", reportService.getDiagnosisClass(param));
-		result.put("student", "bbb");
-		System.out.println(result);
+		result.put("student", reportService.getDiagnosisStu(param));
+//		System.out.println(result);
 		return R.ok().put("data", result);
 	}
 
