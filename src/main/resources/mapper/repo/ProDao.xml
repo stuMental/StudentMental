@@ -766,6 +766,7 @@ when t1.student_study_stat=2 then '正常' when t1.student_study_stat=3 then '�
 		college_name = #{college_name}
 		AND grade_name = #{grade_name}
 		AND class_name = #{class_name}
+		AND course_name = #{course_name}
 		AND dt = #{dt}
 		ORDER BY course_name ASC;
 		<!--AND dt &lt;= date_add( #{dt}, INTERVAL  60 DAY )-->
@@ -776,6 +777,7 @@ when t1.student_study_stat=2 then '正常' when t1.student_study_stat=3 then '�
 		course_name, grade_level, study_level
 		FROM student_mental_status_grade_study_daily
 		WHERE student_number = #{studentid}
+		AND course_name = #{course_name}
 		AND dt = #{dt}
 		ORDER BY course_name ASC;
 	</select>
