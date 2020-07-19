@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.student.modules.datacenter.dao.StudentCourseInfoDao">
+
+    <delete id="deleteCourseByStudentId" parameterType="String">
+        delete from k_school_student_course_info where
+        student_number=#{student_id}
+    </delete>
+
+    <select id="getCourseByTeacher" resultType="java.util.HashMap">
+        select course_id, course_name
+        from school_student_course_info
+        where teacher_id = #{teacher_id}
+        and college_name = #{college_name}
+        and grade_name = #{grade_name}
+        and class_name = #{class_name}
+        group by course_id, course_name order by course_id ASC;
+    </select>
+
+</mapper>
