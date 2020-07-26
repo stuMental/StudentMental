@@ -2,6 +2,7 @@ package io.student.modules.sys.service;
 
 import com.baomidou.mybatisplus.service.IService;
 import io.student.common.utils.PageUtils;
+import io.student.modules.datacenter.entity.Studentimage;
 import io.student.modules.sys.entity.SysUserEntity;
 
 import java.util.List;
@@ -41,12 +42,19 @@ public interface SysUserService extends IService<SysUserEntity> {
 	/**
 	 * 保存用户
 	 */
-	void save(SysUserEntity user);
-	
+//	void save(SysUserEntity user);
+	boolean save(SysUserEntity user, List<Studentimage> studentimages);
+
 	/**
 	 * 修改用户
 	 */
-	void update(SysUserEntity user);
+//	void update(SysUserEntity user);
+	boolean update(SysUserEntity user, List<Studentimage> studentimages);
+
+	/**
+	 * 修改用户标准照
+	 */
+//	boolean update_image(Map<String, Object> param);
 	
 	/**
 	 * 删除用户

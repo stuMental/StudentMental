@@ -38,4 +38,10 @@ public interface SysUserDao extends BaseDao<SysUserEntity> {
 	List<Map<String,Object>> getTeacherList(Map<String, Object> params);
 
 
+	/**
+	 * 根据用户id，查询用户名
+	 */
+	String getUsernameById(long user_id);
+
+
 }
