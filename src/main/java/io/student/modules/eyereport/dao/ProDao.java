@@ -10,6 +10,14 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface ProDao  {
 	List<Map<String, Object>> getktztxxfx(Map<String, Object> param);
+	List<Map<String, Object>> getrtch(Map<String, Object> param);
+	List<Map<String, Object>> getssxw(Map<String, Object> param);
+	List<Map<String, Object>> getxsxw(Map<String, Object> param);
+	List<Map<String, Object>> getjsxw(Map<String, Object> param);
+	List<Map<String, Object>> getqxzt(Map<String, Object> param);
+	List<Map<String, Object>> getjxqxline(Map<String, Object> param);
+	List<Map<String, Object>> getjxzt(Map<String, Object> param);
+	List<Map<String, Object>> getjxztline(Map<String, Object> param);
 
 	List<Map<String, Object>> getkthdx(Map<String, Object> param);
 	List<Map<String, Object>> getkthdxqx(Map<String, Object> param);
@@ -98,6 +106,8 @@ public interface ProDao  {
 	List<Map<String, Object>> getclsdetailrjgx(Map<String, Object> params);
 	List<Map<String, Object>> getclsdetailxxzt(Map<String, Object> params);
 	List<Map<String, Object>> getclsdetailjszt(Map<String, Object> params);
-	
+	List<Map<String, Object>> getDiagnosisClass(Map<String, Object> params);
+	List<Map<String, Object>> getDiagnosisStu(Map<String, Object> params);
+
 	
 }

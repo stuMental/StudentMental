@@ -1,5 +1,6 @@
 package io.student.modules.sys.controller;
 
+import com.alibaba.fastjson.JSON;
 import io.student.common.annotation.SysLog;
 import io.student.common.utils.Constant;
 import io.student.common.utils.PageUtils;
@@ -8,6 +9,7 @@ import io.student.common.validator.Assert;
 import io.student.common.validator.ValidatorUtils;
 import io.student.common.validator.group.AddGroup;
 import io.student.common.validator.group.UpdateGroup;
+import io.student.modules.datacenter.entity.Studentimage;
 import io.student.modules.sys.entity.SysUserEntity;
 import io.student.modules.sys.form.PasswordForm;
 import io.student.modules.sys.service.SysUserRoleService;
@@ -36,7 +38,12 @@ public class SysUserController extends AbstractController {
 	@Autowired
 	private SysUserRoleService sysUserRoleService;
 
+	//	获取教师列表
+	@RequestMapping("/getTeacherList")
+	public R getTeacherList(@RequestParam Map<String, Object> param) {
 
+		return R.ok().put("data", sysUserService.getTeacherList(param));
+	}
 	
 	@GetMapping("/dict")
 	public R dict(@RequestParam Map<String, Object> params)
@@ -110,36 +117,80 @@ public class SysUserController extends AbstractController {
 		return R.ok().put("user", user);
 	}
 	
+//	/**
+//	 * 保存用户
+//	 */
+//	@SysLog("保存用户")
+//	@PostMapping("/save")
+//	@RequiresPermissions("sys:user:save")
+//	public R save(@RequestBody SysUserEntity user){
+//		System.out.println(user);
+//		ValidatorUtils.validateEntity(user, AddGroup.class);
+//
+//		user.setCreateUserId(getUserId());
+//		sysUserService.save(user);
+//
+//		return R.ok();
+//	}
+
 	/**
 	 * 保存用户
 	 */
 	@SysLog("保存用户")
 	@PostMapping("/save")
 	@RequiresPermissions("sys:user:save")
-	public R save(@RequestBody SysUserEntity user){
-		ValidatorUtils.validateEntity(user, AddGroup.class);
-		
+	public R save(@RequestBody Map<String, Object> params){
+//		System.out.println(params);
+		SysUserEntity user = JSON.parseObject(JSON.toJSONString(params.get("userInfo")),
+				SysUserEntity.class);
+		List<Studentimage> studentimages = JSON.parseArray(JSON.toJSONString(params.get("studentphodata")),
+				Studentimage.class);
+
+		ValidatorUtils.validateEntity(user, UpdateGroup.class);
+
 		user.setCreateUserId(getUserId());
-		sysUserService.save(user);
-		
+		sysUserService.save(user, studentimages);
 		return R.ok();
 	}
 	
 	/**
 	 * 修改用户
 	 */
+//	@SysLog("修改用户")
+//	@PostMapping("/update")
+//	@RequiresPermissions("sys:user:update")
+//	public R update(@RequestBody SysUserEntity user){
+//
+//		ValidatorUtils.validateEntity(user, UpdateGroup.class);
+//
+//		user.setCreateUserId(getUserId());
+//		sysUserService.update(user);
+//
+//		return R.ok();
+//	}
+
+	/**
+	 * 修改用户
+	 */
 	@SysLog("修改用户")
 	@PostMapping("/update")
 	@RequiresPermissions("sys:user:update")
-	public R update(@RequestBody SysUserEntity user){
-		ValidatorUtils.validateEntity(user, UpdateGroup.class);
+	public R update(@RequestBody Map<String, Object> params){
+//		System.out.println(params);
 
+		SysUserEntity user = JSON.parseObject(JSON.toJSONString(params.get("userInfo")),
+				SysUserEntity.class);
+		List<Studentimage> studentimages = JSON.parseArray(JSON.toJSONString(params.get("studentphodata")),
+				Studentimage.class);
+
+
+		ValidatorUtils.validateEntity(user, UpdateGroup.class);
 		user.setCreateUserId(getUserId());
-		sysUserService.update(user);
-		
+		sysUserService.update(user, studentimages);
+
 		return R.ok();
 	}
-	
+
 	/**
 	 * 删除用户
 	 */
@@ -154,6 +205,8 @@ public class SysUserController extends AbstractController {
 		if(ArrayUtils.contains(userIds, getUserId())){
 			return R.error("当前用户不能删除");
 		}
+
+//		System.out.println(userIds);
 		
 		sysUserService.deleteBatch(userIds);
 		

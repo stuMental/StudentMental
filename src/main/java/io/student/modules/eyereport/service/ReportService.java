@@ -162,4 +162,7 @@ public interface ReportService {
 
 	List<Map<String, Object>> getclsdetailjszt(Map<String, Object> params);
 
+	List<Map<String, Object>> getDiagnosisClass(Map<String, Object> params);
+	List<Map<String, Object>> getDiagnosisStu(Map<String, Object> params);
+
 }

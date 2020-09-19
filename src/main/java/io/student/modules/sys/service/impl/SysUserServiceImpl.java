@@ -1,5 +1,6 @@
 package io.student.modules.sys.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
@@ -9,6 +10,9 @@ import io.student.common.exception.RRException;
 import io.student.common.utils.Constant;
 import io.student.common.utils.PageUtils;
 import io.student.common.utils.Query;
+import io.student.modules.datacenter.entity.Studentimage;
+import io.student.modules.datacenter.service.StudentimageService;
+import io.student.modules.eyereport.dao.StudentimageDao;
 import io.student.modules.sys.dao.SysUserDao;
 import io.student.modules.sys.entity.SysUserEntity;
 import io.student.modules.sys.service.SysDeptService;
@@ -43,6 +47,10 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 	private SysDeptService SysDeptService;
 	@Autowired
 	private SysUserDao sysUserDao;
+	@Autowired
+	private io.student.modules.datacenter.service.StudentimageService StudentimageService;
+	@Autowired
+	private StudentimageDao studentimageDao;
 	
 	@Override
 	public SysUserEntity queryObject(Long userId)
@@ -97,26 +105,77 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 		return baseMapper.queryByUserName(username);
 	}
 
+//	@Override
+//	@Transactional
+//	public void save(SysUserEntity user) {
+//		user.setCreateTime(new Date());
+//		//sha256加密
+//		String salt = RandomStringUtils.randomAlphanumeric(20);
+//		user.setPassword(new Sha256Hash(user.getPassword(), salt).toHex());
+//		user.setSalt(salt);
+//		this.insert(user);
+//
+//		//检查角色是否越权
+//		checkRole(user);
+//
+//		//保存用户与角色关系
+//		sysUserRoleService.saveOrUpdate(user.getUserId(), user.getRoleIdList());
+//	}
+
 	@Override
 	@Transactional
-	public void save(SysUserEntity user) {
+	public boolean save(SysUserEntity user, List<Studentimage> studentimages) {
 		user.setCreateTime(new Date());
 		//sha256加密
 		String salt = RandomStringUtils.randomAlphanumeric(20);
 		user.setPassword(new Sha256Hash(user.getPassword(), salt).toHex());
 		user.setSalt(salt);
 		this.insert(user);
-		
+
 		//检查角色是否越权
 		checkRole(user);
-		
+
 		//保存用户与角色关系
 		sysUserRoleService.saveOrUpdate(user.getUserId(), user.getRoleIdList());
+
+//		保存标准照
+		StudentimageService.delete(new EntityWrapper<Studentimage>().eq("student_number",
+				user.getUsername()));
+		if (studentimages != null && studentimages.size() != 0) {
+			for (Studentimage studentimage : studentimages) {
+				studentimage.setStudentNumber(user.getUsername());
+				studentimage.setStat("1");
+			}
+			StudentimageService.insertBatch(studentimages);
+		}
+		return true;
 	}
+
+//	@Override
+//	@Transactional
+//	public void update(SysUserEntity user) {
+//		user.setCreateTime(new Date());
+//		if(StringUtils.isBlank(user.getPassword())){
+//			user.setPassword(null);
+//		}else{
+//			user.setPassword(new Sha256Hash(user.getPassword(), user.getSalt()).toHex());
+//		}
+//		this.updateById(user);
+//		//this.updateAllColumnById(user);
+//		//检查角色是否越权
+//		checkRole(user);
+//
+//		//保存用户与角色关系
+//		sysUserRoleService.saveOrUpdate(user.getUserId(), user.getRoleIdList());
+//	}
 
 	@Override
 	@Transactional
-	public void update(SysUserEntity user) {
+	public boolean update(SysUserEntity user, List<Studentimage> studentimages) {
+//		System.out.println(user);
+//		System.out.println(studentimages);
+
+//		保存user表信息
 		user.setCreateTime(new Date());
 		if(StringUtils.isBlank(user.getPassword())){
 			user.setPassword(null);
@@ -124,17 +183,33 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 			user.setPassword(new Sha256Hash(user.getPassword(), user.getSalt()).toHex());
 		}
 		this.updateById(user);
-		//this.updateAllColumnById(user);
 		//检查角色是否越权
 		checkRole(user);
-		
 		//保存用户与角色关系
 		sysUserRoleService.saveOrUpdate(user.getUserId(), user.getRoleIdList());
+
+//		保存标准照
+		StudentimageService.delete(new EntityWrapper<Studentimage>().eq("student_number",
+				user.getUsername()));
+		if (studentimages != null && studentimages.size() != 0) {
+			for (Studentimage studentimage : studentimages) {
+				studentimage.setStudentNumber(user.getUsername());
+				studentimage.setStat("1");
+			}
+			StudentimageService.insertBatch(studentimages);
+		}
+		return true;
 	}
 
 	@Override
-	public void deleteBatch(Long[] userId) {
-		this.deleteBatchIds(Arrays.asList(userId));
+	public void deleteBatch(Long[] userIds) {
+
+		for (int j = 0; j < userIds.length; j++) {
+			String username = sysUserDao.getUsernameById(userIds[j]);
+			studentimageDao.deleteStudentImageByStudentId(username);
+		}
+//		后删学生信息
+		this.deleteBatchIds(Arrays.asList(userIds));
 	}
 
 	@Override
@@ -178,5 +253,10 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 		}
 		
 		return sysUserDao.dict(param);
+	}
+
+	@Override
+	public List<Map<String, Object>> getTeacherList(Map<String, Object> param) {
+		return sysUserDao.getTeacherList(param);
 	}
 }

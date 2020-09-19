@@ -664,6 +664,17 @@ public class ReportController extends AbstractController {
 		return R.ok().put("data", result);
 	}
 
+	@RequestMapping("/diagnosis")
+	public R getDiagnosis(@RequestBody Map<String, Object> param) {
+		param.putAll(sysDeptService.getgrade(Long.parseLong(param.get("deptid").toString())));
+//		System.out.println("aaa" + param);
+		Map<String, Object> result = new HashMap<>();
+		result.put("class", reportService.getDiagnosisClass(param));
+		result.put("student", reportService.getDiagnosisStu(param));
+//		System.out.println(result);
+		return R.ok().put("data", result);
+	}
+
 	@RequestMapping("/pro")
 	public R getpros(@RequestBody Map<String, Object> param) {
 		Map<String, Object> result = new HashMap<>();

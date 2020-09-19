@@ -80,4 +80,10 @@ select distinct cast(user_id as char) as userId,username,`name` from sys_user u
 	<select id="queryObject" resultType="io.student.modules.sys.entity.SysUserEntity">
 		select * from sys_user where user_id = #{value}
 	</select>
+	<select id="getTeacherList" resultType="io.student.modules.sys.entity.SysUserEntity">
+		select * from sys_user where username != "admin"
+	</select>
+	<select id="getUsernameById" resultType="String">
+		select username from sys_user where user_id = #{user_id}
+	</select>
 </mapper>

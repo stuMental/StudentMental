@@ -176,6 +176,7 @@ public class SchoolstudentServiceImpl extends ServiceImpl<SchoolstudentDao, Scho
 		if (studentimages != null && studentimages.size() != 0) {
 			for (Studentimage studentimage : studentimages) {
 				studentimage.setStudentNumber(schoolstudentEntity.getStudentNumber());
+				studentimage.setStat("0");
 			}
 			StudentimageService.insertBatch(studentimages);
 		}
