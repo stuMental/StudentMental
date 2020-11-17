@@ -11,6 +11,8 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Row;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +34,35 @@ import io.student.modules.sys.entity.SysDeptEntity;
 import io.student.modules.sys.service.SysConfigService;
 import io.student.modules.sys.service.SysDeptService;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellValue;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.ss.util.WorkbookUtil;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 @RestController
 @RequestMapping("/report")
 public class ReportController extends AbstractController {
@@ -51,47 +82,139 @@ public class ReportController extends AbstractController {
 	{
 		return R.ok().put("data",reportService.getteachlist());
 	}
-	
-	
-	
 
 	@RequestMapping("/uploadlocal")
 	public R importxsl(@RequestParam("file") MultipartFile file) {
 		if (file.isEmpty()) {
 			return R.error("上传文件不能为空");
 		}
+		System.out.println("innnnnnnnnnnnnn!");
+//		try {
+//			Workbook wb=POIUtil.getWorkBook(file);
+//			String tablename=wb.getSheetName(0);
+//			System.out.println(tablename);
+//			List<String[]> result = POIUtil.readExcel(file);
+//			System.out.println(result.toString());
+//			String[] cols=result.get(0);
+//			System.out.println(cols.toString());
+//			List<Map<String, String>> lists=new ArrayList<>();
+//			for(int a=1;a<result.size();a++)
+//			{
+//				Map<String, String> sMap=new HashMap<>();
+//				String[] values=result.get(a);
+//				for(int b=0;b<cols.length;b++)
+//				{
+//					sMap.put(cols[b], values[b]);
+//				}
+//				lists.add(sMap);
+//			}
+//			System.out.println(lists);
+//			if(lists.size()==0)
+//			{
+//				System.out.println("emptyyyyyyyyyy");
+//				return R.error("数据为空");
+//			}
+//
+//			if(reportService.importxls(lists, tablename)!=-1)
+//			{
+//				return R.ok();
+//			}
+//
+//		} catch (IOException e) {
+//			return R.error(e.getMessage());
+//		}
+
 		try {
 			Workbook wb=POIUtil.getWorkBook(file);
-			String tablename=wb.getSheetName(0);
-			List<String[]> result = POIUtil.readExcel(file);
-			String[] cols=result.get(0);
-			List<Map<String, String>> lists=new ArrayList<>();
-			for(int a=1;a<result.size();a++)
-			{
-				Map<String, String> sMap=new HashMap<>();
-				String[] values=result.get(a);
-				for(int b=0;b<cols.length;b++)
-				{
-					sMap.put(cols[b], values[b]);
+			Sheet sheet = wb.getSheetAt(0);
+			List<List<Object>> dataList = new ArrayList<>();
+			int readRowCount = 0;
+			readRowCount = sheet.getPhysicalNumberOfRows();
+			// 解析sheet 的行
+			for (int j = sheet.getFirstRowNum(); j < readRowCount; j++) {
+				Row row = sheet.getRow(j);
+				if (row == null) {
+					continue;
 				}
-				lists.add(sMap);
+				if (row.getFirstCellNum() < 0) {
+					continue;
+				}
+				int readColumnCount = 0;
+				readColumnCount = (int) row.getLastCellNum();
+				List<Object> rowValue = new LinkedList<Object>();
+				// 解析sheet 的列
+				for (int k = 0; k < readColumnCount; k++) {
+					Cell cell = row.getCell(k);
+					rowValue.add(getCellValue(wb, cell));
+				}
+				dataList.add(rowValue);
 			}
-			if(lists.size()==0)
+
+			System.out.println(dataList);
+
+			if(dataList.size()==0)
 			{
+				System.out.println("emptyyyyyyyyyy");
 				return R.error("数据为空");
 			}
-			
-			if(reportService.importxls(lists, tablename)!=-1)
+
+			// 存入数据库
+			String tablename=wb.getSheetName(0);
+			System.out.println(tablename);
+//			switch (tablename) {
+//				case "dept":
+//					tablename = ""
+//			}
+			if(reportService.importxls(dataList, tablename)!=-1)
 			{
 				return R.ok();
 			}
-			
+
 		} catch (IOException e) {
 			return R.error(e.getMessage());
 		}
+	}
 
-		return R.ok();
-			
+	//	获取excel单元格的值
+	private static Object getCellValue(Workbook wb, Cell cell) {
+		Object columnValue = null;
+		if (cell != null) {
+			DecimalFormat df = new DecimalFormat("0");// 格式化 number
+			// String
+			// 字符
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 格式化日期字符串
+			DecimalFormat nf = new DecimalFormat("0.00");// 格式化数字
+			switch (cell.getCellType()) {
+				case Cell.CELL_TYPE_STRING:
+					columnValue = cell.getStringCellValue();
+					break;
+				case Cell.CELL_TYPE_NUMERIC:
+					if ("@".equals(cell.getCellStyle().getDataFormatString())) {
+						columnValue = df.format(cell.getNumericCellValue());
+					} else if ("General".equals(cell.getCellStyle().getDataFormatString())) {
+						columnValue = nf.format(cell.getNumericCellValue());
+					} else {
+						columnValue = sdf.format(HSSFDateUtil.getJavaDate(cell.getNumericCellValue()));
+					}
+					break;
+				case Cell.CELL_TYPE_BOOLEAN:
+					columnValue = cell.getBooleanCellValue();
+					break;
+				case Cell.CELL_TYPE_BLANK:
+					columnValue = "";
+					break;
+				case Cell.CELL_TYPE_FORMULA:
+					// 格式单元格
+					FormulaEvaluator evaluator = wb.getCreationHelper().createFormulaEvaluator();
+					evaluator.evaluateFormulaCell(cell);
+					CellValue cellValue = evaluator.evaluate(cell);
+					columnValue = cellValue.getNumberValue();
+					break;
+				default:
+					columnValue = cell.toString();
+			}
+		}
+		return columnValue;
 	}
 
 	/**

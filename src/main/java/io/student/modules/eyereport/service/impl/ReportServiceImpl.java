@@ -64,6 +64,28 @@ public class ReportServiceImpl implements ReportService {
 
 	@Override
 	@DataSource(name = DataSourceNames.SECOND)
+	public int importxlsbatch(List<Map<String, String>> list, String type) {
+		switch (type) {
+			case "school_camera_class_info":
+				prodao.deleteschool_camera();
+				return prodao.insertschool_camera(list);
+			case "school_student_class_info":
+				prodao.deleteschool_student();
+				return prodao.insertschool_student(list);
+			case "school_course_info":
+				prodao.deleteschool_course();
+				return prodao.insertschool_course(list);
+			case "school_performance_info":
+				return prodao.insertschool_performance(list);
+			case "school_award_info":
+				return prodao.insertschool_award(list);
+			default:
+				return -1;
+		}
+	}
+
+	@Override
+	@DataSource(name = DataSourceNames.SECOND)
 	public List<Map<String, Object>> student_interest(Map<String, Object> params) {
 		return prodao.student_interest(params);
 	}
