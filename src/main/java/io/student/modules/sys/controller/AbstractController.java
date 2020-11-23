@@ -16,10 +16,18 @@ public abstract class AbstractController {
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 	
 	protected SysUserEntity getUser() {
+
 		return (SysUserEntity) SecurityUtils.getSubject().getPrincipal();
 	}
 
 	protected Long getUserId() {
+		System.out.println("sdedede");
+		System.out.println(SecurityUtils.getSubject());
+		System.out.println(SecurityUtils.getSubject().getSession());
+		System.out.println(SecurityUtils.getSubject().getPrincipal());
+		System.out.println((SysUserEntity) SecurityUtils.getSubject().getPrincipal());
+		System.out.println(getUser());
+		System.out.println(getUser().getUserId());
 		return getUser().getUserId();
 	}
 	protected Long getDeptId() {

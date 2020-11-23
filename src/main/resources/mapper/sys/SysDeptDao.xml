@@ -57,6 +57,10 @@
 	<select id="queryDetpIdList" resultType="long">
 		select dept_id from sys_dept where parent_id = #{value} and del_flag = 0
 	</select>
+
+	<select id="queryId" resultType="long">
+		select dept_id from sys_dept where name = #{name} and parent_id = #{preId}
+	</select>
 	
 	<select id="selectleavel"  resultType="int">
 	select level from (

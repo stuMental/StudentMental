@@ -3,6 +3,7 @@ package io.student.modules.sys.dao;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import io.student.modules.sys.entity.SysUserRoleEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -21,6 +22,12 @@ public interface SysUserRoleDao extends BaseMapper<SysUserRoleEntity> {
 	 */
 	List<Long> queryRoleIdList(Long userId);
 
+	/**
+	 * 查询id
+	 * @param userId
+	 * @param roleId
+	 */
+	Long queryUserRoleId(@Param("userId") Long userId, @Param("roleId") Long roleId);
 
 	/**
 	 * 根据角色ID数组，批量删除

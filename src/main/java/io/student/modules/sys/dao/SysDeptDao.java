@@ -3,6 +3,8 @@ package io.student.modules.sys.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import io.student.modules.sys.entity.SysDeptEntity;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -21,4 +23,11 @@ public interface SysDeptDao extends BaseDao<SysDeptEntity> {
      */
     List<Long> queryDetpIdList(Long parentId);
     int selectleavel(Long dept_id);
+
+    /**
+     * 查询id
+     * @param name  部门名称
+     * @param preId  父部门id
+     */
+    Long queryId(@Param("name") String name, @Param("preId") Long preId);
 }

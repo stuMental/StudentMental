@@ -35,7 +35,8 @@ public interface ReportService {
 	List<Map<String, Object>> getcourselist(Map<String, Object> param);
 	List<Map<String, Object>> getteachlist();
 
-	int importxls(List<Map<String, String>> list,String type);
+//	int importxls(List<Map<String, String>> list,String type);
+	int importxls(List<Object> list,String type, Long userId);
 
 	/**
 	 * 个性发展学科兴趣

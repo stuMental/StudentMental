@@ -125,22 +125,25 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 	@Override
 	@Transactional
 	public boolean save(SysUserEntity user, List<Studentimage> studentimages) {
+		System.out.println("AAaaa");
 		user.setCreateTime(new Date());
 		//sha256加密
 		String salt = RandomStringUtils.randomAlphanumeric(20);
 		user.setPassword(new Sha256Hash(user.getPassword(), salt).toHex());
 		user.setSalt(salt);
+		System.out.println("bbbbbb");
 		this.insert(user);
-
+		System.out.println("ccccc");
 		//检查角色是否越权
 		checkRole(user);
-
+		System.out.println("dddd");
 		//保存用户与角色关系
 		sysUserRoleService.saveOrUpdate(user.getUserId(), user.getRoleIdList());
-
+		System.out.println("eeee");
 //		保存标准照
 		StudentimageService.delete(new EntityWrapper<Studentimage>().eq("student_number",
 				user.getUsername()));
+		System.out.println("ffff");
 		if (studentimages != null && studentimages.size() != 0) {
 			for (Studentimage studentimage : studentimages) {
 				studentimage.setStudentNumber(user.getUsername());
@@ -148,6 +151,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 			}
 			StudentimageService.insertBatch(studentimages);
 		}
+		System.out.println("ggggg");
 		return true;
 	}
 

@@ -84,54 +84,48 @@ public class ReportController extends AbstractController {
 	}
 
 	@RequestMapping("/uploadlocal")
-	public R importxsl(@RequestParam("file") MultipartFile file) {
+	public R importxsl(@RequestParam Map<String,String> map, @RequestParam("file") MultipartFile file) {
 		if (file.isEmpty()) {
 			return R.error("上传文件不能为空");
 		}
 		System.out.println("innnnnnnnnnnnnn!");
-//		try {
-//			Workbook wb=POIUtil.getWorkBook(file);
-//			String tablename=wb.getSheetName(0);
-//			System.out.println(tablename);
-//			List<String[]> result = POIUtil.readExcel(file);
-//			System.out.println(result.toString());
-//			String[] cols=result.get(0);
-//			System.out.println(cols.toString());
-//			List<Map<String, String>> lists=new ArrayList<>();
-//			for(int a=1;a<result.size();a++)
-//			{
-//				Map<String, String> sMap=new HashMap<>();
-//				String[] values=result.get(a);
-//				for(int b=0;b<cols.length;b++)
-//				{
-//					sMap.put(cols[b], values[b]);
-//				}
-//				lists.add(sMap);
-//			}
-//			System.out.println(lists);
-//			if(lists.size()==0)
-//			{
-//				System.out.println("emptyyyyyyyyyy");
-//				return R.error("数据为空");
-//			}
-//
-//			if(reportService.importxls(lists, tablename)!=-1)
-//			{
-//				return R.ok();
-//			}
-//
-//		} catch (IOException e) {
-//			return R.error(e.getMessage());
-//		}
 
+		// 获取表名
+		String type = map.get("tablename").toString();
+		System.out.println(type);
+		String tablename = "";
+		switch (type) {
+			case "dept":
+				tablename = "sys_dept";
+				break;
+			case "camera":
+				tablename = "school_camera_class_info";
+				break;
+			case "courseName":
+				tablename = "sys_config";
+				break;
+			case "teacher":
+				tablename = "sys_user";
+				break;
+			case "student":
+				tablename = "school_student_class_info";
+				break;
+		}
+
+		//获取excel数据
 		try {
 			Workbook wb=POIUtil.getWorkBook(file);
 			Sheet sheet = wb.getSheetAt(0);
 			List<List<Object>> dataList = new ArrayList<>();
 			int readRowCount = 0;
 			readRowCount = sheet.getPhysicalNumberOfRows();
+			//表中无数据
+			if (readRowCount == 1) {
+				System.out.println("emptyyyyyyyyyy");
+				return R.error("数据为空");
+			}
 			// 解析sheet 的行
-			for (int j = sheet.getFirstRowNum(); j < readRowCount; j++) {
+			for (int j = sheet.getFirstRowNum() + 1; j < readRowCount; j++) {
 				Row row = sheet.getRow(j);
 				if (row == null) {
 					continue;
@@ -147,30 +141,26 @@ public class ReportController extends AbstractController {
 					Cell cell = row.getCell(k);
 					rowValue.add(getCellValue(wb, cell));
 				}
-				dataList.add(rowValue);
+				//存入数据库
+				System.out.println(rowValue);
+//				fixme:bug
+				System.out.println("dwdwdwdw");
+//				Long userId = getUserId();
+//				System.out.println("dsdsd" + userId.toString());
+//				if(reportService.importxls(rowValue, tablename, userId)!=-1)
+				if(reportService.importxls(rowValue, tablename, 0L)!=-1)
+				{
+					return R.ok();
+				} else {
+					return R.error();
+				}
+//				dataList.add(rowValue);
 			}
 
-			System.out.println(dataList);
+//			System.out.println(dataList);
+			return R.ok();
 
-			if(dataList.size()==0)
-			{
-				System.out.println("emptyyyyyyyyyy");
-				return R.error("数据为空");
-			}
-
-			// 存入数据库
-			String tablename=wb.getSheetName(0);
-			System.out.println(tablename);
-//			switch (tablename) {
-//				case "dept":
-//					tablename = ""
-//			}
-			if(reportService.importxls(dataList, tablename)!=-1)
-			{
-				return R.ok();
-			}
-
-		} catch (IOException e) {
+		} catch (Exception e) {
 			return R.error(e.getMessage());
 		}
 	}

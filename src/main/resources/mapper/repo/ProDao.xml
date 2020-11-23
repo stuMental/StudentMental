@@ -486,23 +486,37 @@ and t.grade_name=#{grade_name}
 
 
 
-
+<insert id="insert_sys_dept" parameterType="java.util.List" useGeneratedKeys="false">
+	insert into school_camera_class_info
+	( camera_id,camera_addr,class_id,class_name,grade_name,dt)
+	values
+	<foreach collection="list" item="item" index="index" separator=",">
+		(
+		#{item.camera_id},
+		#{item.camera_addr},
+		#{item.class_id},
+		#{item.class_name},
+		#{item.grade_name},
+		#{item.dt}
+		)
+	</foreach>
+</insert>
 
 <insert id="insertschool_camera" parameterType="java.util.List" useGeneratedKeys="false">
-    			insert into school_camera_class_info
-    			( camera_id,camera_addr,class_id,class_name,grade_name,dt)
-    			values
-    			<foreach collection="list" item="item" index="index" separator=",">
-    				(
-    					#{item.camera_id},
-    					#{item.camera_addr},
-    					#{item.class_id},
-    					#{item.class_name},
-    					#{item.grade_name},
-    					#{item.dt}
-    				)
-    		     </foreach>		
-    </insert> 
+	insert into school_camera_class_info
+	( camera_id,camera_addr,class_id,class_name,grade_name,dt)
+	values
+	<foreach collection="list" item="item" index="index" separator=",">
+		(
+			#{item.camera_id},
+			#{item.camera_addr},
+			#{item.class_id},
+			#{item.class_name},
+			#{item.grade_name},
+			#{item.dt}
+		)
+	 </foreach>
+</insert>
     <insert id="insertschool_student" parameterType="java.util.List" useGeneratedKeys="false">
     			insert into school_student_class_info
     			( grade_name,class_name,student_number,student_name,dt)

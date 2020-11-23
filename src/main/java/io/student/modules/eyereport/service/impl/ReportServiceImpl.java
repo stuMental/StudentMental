@@ -4,6 +4,15 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import com.alibaba.fastjson.JSON;
+import io.student.common.utils.Constant;
+import io.student.common.validator.ValidatorUtils;
+import io.student.common.validator.group.UpdateGroup;
+import io.student.modules.datacenter.entity.SchoolstudentEntity;
+import io.student.modules.sys.entity.*;
+import io.student.modules.datacenter.entity.CameraroomEntity;
+import io.student.modules.sys.entity.SysConfigEntity;
+import io.student.modules.sys.service.impl.SysDeptServiceImpl;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -17,13 +26,69 @@ import io.student.common.utils.R;
 import io.student.datasources.DataSourceNames;
 import io.student.datasources.annotation.DataSource;
 import io.student.modules.eyereport.dao.ProDao;
+import io.student.modules.sys.dao.SysDeptDao;
+import io.student.modules.datacenter.dao.CameraroomDao;
+import io.student.modules.sys.dao.SysConfigDao;
+import io.student.modules.sys.dao.SysUserDao;
+import io.student.modules.sys.dao.SysRoleDao;
+import io.student.modules.sys.dao.SysUserRoleDao;
+import io.student.modules.datacenter.dao.SchoolstudentDao;
 import io.student.modules.eyereport.service.ReportService;
+import io.student.modules.sys.service.SysDeptService;
+import io.student.modules.datacenter.service.CameraroomService;
+import io.student.modules.sys.service.SysConfigService;
+import io.student.modules.sys.service.SysUserService;
+import io.student.modules.sys.service.SysRoleService;
+import io.student.modules.sys.service.SysUserRoleService;
+import io.student.modules.datacenter.service.SchoolstudentService;
 
 @Service("reportService")
 public class ReportServiceImpl implements ReportService {
 
 	@Autowired
 	private ProDao prodao;
+
+	@Autowired
+	private SysDeptDao sysdeptdao;
+
+	@Autowired
+	private CameraroomDao CameraroomDao;
+
+	@Autowired
+	private SysConfigDao SysConfigDao;
+
+	@Autowired
+	private SysUserDao SysUserDao;
+
+	@Autowired
+	private SysRoleDao SysRoleDao;
+
+	@Autowired
+	private SysUserRoleDao SysUserRoleDao;
+
+	@Autowired
+	private SchoolstudentDao SchoolstudentDao;
+
+	@Autowired
+	private SysDeptService sysDeptService;
+
+	@Autowired
+	private CameraroomService CameraroomService;
+
+	@Autowired
+	private SysConfigService SysConfigService;
+
+	@Autowired
+	private SysUserService SysUserService;
+
+	@Autowired
+	private SysRoleService SysRoleService;
+
+	@Autowired
+	private SysUserRoleService SysUserRoleService;
+
+	@Autowired
+	private SchoolstudentService SchoolstudentService;
 
 	@Override
 	@DataSource(name=DataSourceNames.SECOND)
@@ -42,47 +107,241 @@ public class ReportServiceImpl implements ReportService {
 	
 	@Override
 	@DataSource(name = DataSourceNames.SECOND)
-	public int importxls(List<Map<String, String>> list, String type) {
+//	public int importxls(List<Map<String, String>> list, String type) {
+	public int importxls(List<Object> list, String type, Long userId) {
+		System.out.println("ssssssss");
 		switch (type) {
-		case "school_camera_class_info":
-			prodao.deleteschool_camera();
-			return prodao.insertschool_camera(list);
-		case "school_student_class_info":
-			prodao.deleteschool_student();
-			return prodao.insertschool_student(list);
-		case "school_course_info":
-			prodao.deleteschool_course();
-			return prodao.insertschool_course(list);
-		case "school_performance_info":
-			return prodao.insertschool_performance(list);
-		case "school_award_info":
-			return prodao.insertschool_award(list);
-		default:
-			return -1;
-		}
-	}
+			//班年级信息
+			case "sys_dept":
+				Long preId = 0L;
+//				System.out.println(list.size());
+				try {
+					for(int i = 0; i < list.size(); i ++) {
+//						System.out.println(i);
+						//获取部门id
+						String name = list.get(i).toString();
+						Long id = sysDeptService.queryId(name, preId);
+						if(id == null) {
+							//添加部门
+							SysDeptEntity root = new SysDeptEntity();
+							root.setDeptId(0L);
+							root.setName(name);
+							root.setParentId(preId);
+							root.setOpen(true);
+							root.setOrderNum(0);
+							sysDeptService.save(root);
+//							System.out.println("yesss!!!");
+							preId = sysDeptService.queryId(name, preId);
+						} else {
+							preId = id;
+						}
+					}
+					return 0;
+				} catch (Exception e){
+					return -1;
+				}
 
-	@Override
-	@DataSource(name = DataSourceNames.SECOND)
-	public int importxlsbatch(List<Map<String, String>> list, String type) {
-		switch (type) {
+			//摄像头信息
 			case "school_camera_class_info":
-				prodao.deleteschool_camera();
-				return prodao.insertschool_camera(list);
+				//获取列信息
+				String roomAddr = list.get(0).toString();
+				String cameraAddr = list.get(1).toString();
+				String dockerName = list.get(2).toString();
+				try {
+					//获取教室
+					SysConfigEntity room = SysConfigDao.queryByKey("room", roomAddr);
+					System.out.println(room);
+					if(room == null) {
+						//添加教室
+						SysConfigEntity root = new SysConfigEntity();
+						root.setParamType("room");
+						root.setParamKey(roomAddr);
+						root.setParamValue(roomAddr);
+						SysConfigService.save(root);
+						System.out.println("yesss!!!");
+					}
+					//获取摄像头
+					Long id = CameraroomDao.queryCameraId(roomAddr, cameraAddr, dockerName);
+//					System.out.println(id);
+					if(id == null) {
+						//添加摄像头
+						CameraroomEntity root = new CameraroomEntity();
+						root.setCameraAddr(cameraAddr);
+						root.setRoomId(roomAddr);
+						root.setRoomAddr(roomAddr);
+						root.setDocker(dockerName);
+						CameraroomService.save(root);
+//						System.out.println("yesss!!!");
+					}
+					return 0;
+				} catch (Exception e){
+					return -1;
+				}
+
+			//课程名称
+			case "sys_config":
+				//获取列信息
+				String courseName = list.get(0).toString();
+				try {
+					//获取课程实体id
+					SysConfigEntity course = SysConfigDao.queryByKey("course", courseName);
+					System.out.println(course);
+					if(course == null) {
+						//添加课程实体
+						SysConfigEntity root = new SysConfigEntity();
+						root.setParamType("course");
+						root.setParamKey(courseName);
+						root.setParamValue(courseName);
+						SysConfigService.save(root);
+						System.out.println("yesss!!!");
+					}
+					return 0;
+				} catch (Exception e){
+					return -1;
+				}
+
+			//教师信息
+			case "sys_user":
+				System.out.println("ffffbfbfbff");
+				//获取列信息
+				String userName = list.get(0).toString();
+				String teacherName = list.get(1).toString();
+				String schoolName = list.get(2).toString();
+				String gradeName = list.get(3).toString();
+				String roomName = list.get(4).toString();
+				String role = list.get(5).toString();
+				System.out.println("ffff" + role);
+				try {
+					//获取教师id
+					SysUserEntity teacher = SysUserDao.queryByUserName(userName);
+					System.out.println(teacher);
+					Long teacherId;
+					if(teacher == null) {
+						//添加教师
+						SysUserEntity root = new SysUserEntity();
+						root.setUsername(userName);
+						if(teacherName == "") {
+							root.setName(teacherName);
+						} else {
+							root.setName(userName);
+						}
+						root.setPassword(userName);
+						root.setStatus(1);
+//						todo:当前用户id
+//						root.setCreateUserId(userId);
+						//查询班年级id
+						Long schoolId = sysDeptService.queryId(schoolName, 0L);
+						System.out.println("schoolId: " + schoolId);
+						Long gradeId = sysDeptService.queryId(gradeName, schoolId);
+						System.out.println("gradeId: " + gradeId);
+						Long roomId = sysDeptService.queryId(roomName, gradeId);
+						System.out.println("roomId: " + roomId);
+						root.setDeptId(roomId);
+						System.out.println(root);
+						SysUserService.save(root, null);
+						System.out.println("yesss!!!");
+						SysUserEntity newteacher = SysUserDao.queryByUserName(userName);
+						System.out.println(newteacher);
+						teacherId = newteacher.getUserId();
+					} else {
+						teacherId = teacher.getUserId();
+					}
+					System.out.println(teacherId);
+					//存入sys_user_role
+					Long userRoleId = 0L;
+					Long roleId = 0L;
+					System.out.println(role);
+					System.out.println(role.equals("管理员"));
+					if(role.equals("管理员")) {
+						//查询管理员role_id
+						roleId = SysRoleDao.queryRoleId("管理员");
+						userRoleId = SysUserRoleDao.queryUserRoleId(teacherId, roleId);
+					} else if (role.equals("教师角色")){
+						//查询教师role_id
+						roleId = SysRoleDao.queryRoleId("教师角色");
+						userRoleId = SysUserRoleDao.queryUserRoleId(teacherId, roleId);
+					}
+					System.out.println(roleId);
+					System.out.println(userRoleId);
+					if(userRoleId == null) {
+						//添加user_role对应关系
+						SysUserRoleEntity root = new SysUserRoleEntity();
+						root.setUserId(teacherId);
+						root.setRoleId(roleId);
+						SysUserRoleDao.insert(root);
+						System.out.println("yesss!!!");
+					}
+					return 0;
+				} catch (Exception e){
+					return -1;
+				}
+			//学生信息
 			case "school_student_class_info":
-				prodao.deleteschool_student();
-				return prodao.insertschool_student(list);
-			case "school_course_info":
-				prodao.deleteschool_course();
-				return prodao.insertschool_course(list);
-			case "school_performance_info":
-				return prodao.insertschool_performance(list);
-			case "school_award_info":
-				return prodao.insertschool_award(list);
+				//获取列信息
+				String studentId = list.get(0).toString();
+				String studentName = list.get(1).toString();
+				String studentSchoolName = list.get(2).toString();
+				String studentGradeName = list.get(3).toString();
+				String studentRoomName = list.get(4).toString();
+				try {
+					//查询班年级id
+					Long schoolId = sysDeptService.queryId(studentSchoolName, 0L);
+					System.out.println("schoolId: " + schoolId);
+					Long gradeId = sysDeptService.queryId(studentGradeName, schoolId);
+					System.out.println("gradeId: " + gradeId);
+					Long roomId = sysDeptService.queryId(studentRoomName, gradeId);
+					System.out.println("roomId: " + roomId);
+					//删除已有学生实体
+					SchoolstudentDao.deleteById(studentId);
+					//添加实体
+					SchoolstudentEntity root = new SchoolstudentEntity();
+					root.setStudentNumber(studentId);
+					root.setStudentName(studentName);
+					root.setDeptId(roomId);
+					root.setDeptName(studentRoomName);
+					root.setIsphon("0");
+					SchoolstudentService.save(root);
+					System.out.println("yesss!!!");
+					return 0;
+				} catch (Exception e){
+					return -1;
+				}
+//			case "school_student_class_info":
+//				prodao.deleteschool_student();
+//				return prodao.insertschool_student(list);
+//			case "school_course_info":
+//				prodao.deleteschool_course();
+//				return prodao.insertschool_course(list);
+//			case "school_performance_info":
+//				return prodao.insertschool_performance(list);
+//			case "school_award_info":
+//				return prodao.insertschool_award(list);
 			default:
 				return -1;
 		}
 	}
+
+//	@Override
+//	@DataSource(name = DataSourceNames.SECOND)
+//	public int importxlsbatch(List<Map<String, String>> list, String type) {
+//		switch (type) {
+//			case "school_camera_class_info":
+//				prodao.deleteschool_camera();
+//				return prodao.insertschool_camera(list);
+//			case "school_student_class_info":
+//				prodao.deleteschool_student();
+//				return prodao.insertschool_student(list);
+//			case "school_course_info":
+//				prodao.deleteschool_course();
+//				return prodao.insertschool_course(list);
+//			case "school_performance_info":
+//				return prodao.insertschool_performance(list);
+//			case "school_award_info":
+//				return prodao.insertschool_award(list);
+//			default:
+//				return -1;
+//		}
+//	}
 
 	@Override
 	@DataSource(name = DataSourceNames.SECOND)

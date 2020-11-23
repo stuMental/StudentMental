@@ -31,6 +31,7 @@ public interface SysDeptService {
 	 * @param parentId  上级部门ID
 	 */
 	List<Long> queryDetpIdList(Long parentId);
+	Long queryId(String name, Long preId);
 
 	/**
 	 * 获取子部门ID(包含本部门ID)，用于数据过滤
@@ -38,6 +39,6 @@ public interface SysDeptService {
 	String getSubDeptIdList(Long deptId);
 	
 	Map<String, Object> getgrade(Long deptId);
-	 int selectleavel(Long dept_id);
+	int selectleavel(Long dept_id);
 
 }

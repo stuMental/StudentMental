@@ -54,6 +54,11 @@ public class SysDeptServiceImpl implements SysDeptService {
 	}
 
 	@Override
+	public Long queryId(String name, Long preId) {
+		return sysDeptDao.queryId(name, preId);
+	}
+
+	@Override
 	public String getSubDeptIdList(Long deptId){
 		//部门及子部门ID列表
 		List<Long> deptIdList = new ArrayList<>();
