@@ -1,15 +1,11 @@
 package io.student.modules.eyereport.controller;
 
-import java.io.IOException;
+import java.io.*;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
+import io.student.modules.datacenter.entity.Kimage;
+import io.student.modules.datacenter.entity.Studentimage;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Row;
@@ -33,18 +29,14 @@ import io.student.modules.sys.controller.AbstractController;
 import io.student.modules.sys.entity.SysDeptEntity;
 import io.student.modules.sys.service.SysConfigService;
 import io.student.modules.sys.service.SysDeptService;
+import io.student.modules.datacenter.service.KimageService;
+import io.student.modules.datacenter.service.StudentimageService;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -75,12 +67,71 @@ public class ReportController extends AbstractController {
 
 	@Autowired
 	private SysConfigService sysConfigService;
-	
+
+	@Autowired
+	private KimageService kimageService;
+
+	@Autowired
+	private StudentimageService StudentimageService;
 	
 	@GetMapping("/tealist")
 	public R gettealist()
 	{
 		return R.ok().put("data",reportService.getteachlist());
+	}
+
+	@RequestMapping("/uploadImage")
+	public R importImage(@RequestParam Map<String,String> map, @RequestParam("file") MultipartFile file) {
+		if (file.isEmpty()) {
+			return R.error("上传照片不能为空");
+		}
+		System.out.println("innnnnnnnnnnnnn2222!");
+		// 获取表名
+		String type = map.get("tablename").toString();
+		System.out.println(type);
+		//	存储照片
+		if (file.isEmpty()) {
+			return R.error("上传文件不能为空");
+		}
+		try {
+			InputStream is = file.getInputStream();
+			//	获取文件名即学号
+			String studentId = file.getOriginalFilename();
+			studentId = studentId.split("\\.")[0];
+			System.out.println(studentId);
+			//	获取照片
+			ByteArrayOutputStream swapStream = new ByteArrayOutputStream();
+			byte[] buff = new byte[100];
+			int rc = 0;
+			while ((rc = is.read(buff, 0, 100)) > 0) {
+				swapStream.write(buff, 0, rc);
+			}
+			byte[] in_b = swapStream.toByteArray();
+			//	存储student_image表
+			String uuid = UUID.randomUUID().toString().replace("-", "");
+			System.out.println(uuid);
+			Studentimage studentImage = new Studentimage();
+			studentImage.setStudentNumber(studentId);
+			studentImage.setImageId(uuid);
+			studentImage.setStat("0");
+			int s_id = StudentimageService.insertobj(studentImage);
+			if(s_id!=1) {
+				return R.error("失败");
+			}
+			//	存储image表
+			Kimage kimage=new Kimage();
+			kimage.setImage(in_b);
+			kimage.setId(uuid);
+			int id=kimageService.insertobj(kimage);
+			if(id!=1)
+			{
+				return R.error("失败");
+			}
+
+			return R.ok().put("data", kimage.getId());
+		} catch (Exception e) {
+			return R.error(e.toString());
+		}
 	}
 
 	@RequestMapping("/uploadlocal")
