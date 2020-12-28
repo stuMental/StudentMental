@@ -162,7 +162,7 @@ public class ReportServiceImpl implements ReportService {
 					}
 					//获取摄像头
 					Long id = CameraroomDao.queryCameraId(roomAddr, cameraAddr, dockerName);
-//					System.out.println(id);
+					System.out.println(id);
 					if(id == null) {
 						//添加摄像头
 						CameraroomEntity root = new CameraroomEntity();
@@ -171,9 +171,9 @@ public class ReportServiceImpl implements ReportService {
 						root.setRoomAddr(roomAddr);
 						root.setDocker(dockerName);
 						CameraroomService.save(root);
-//						System.out.println("yesss!!!");
+						System.out.println("yesss!!!");
+						return 0;
 					}
-					return 0;
 				} catch (Exception e){
 					return -1;
 				}
@@ -216,14 +216,15 @@ public class ReportServiceImpl implements ReportService {
 					SysUserEntity teacher = SysUserDao.queryByUserName(userName);
 					System.out.println(teacher);
 					Long teacherId;
+
 					if(teacher == null) {
 						//添加教师
 						SysUserEntity root = new SysUserEntity();
 						root.setUsername(userName);
 						if(teacherName == "") {
-							root.setName(teacherName);
-						} else {
 							root.setName(userName);
+						} else {
+							root.setName(teacherName);
 						}
 						root.setPassword(userName);
 						root.setStatus(1);

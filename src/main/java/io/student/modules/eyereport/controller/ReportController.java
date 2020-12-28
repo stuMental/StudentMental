@@ -98,6 +98,7 @@ public class ReportController extends AbstractController {
 			//	获取文件名即学号
 			String studentId = file.getOriginalFilename();
 			studentId = studentId.split("\\.")[0];
+			studentId = studentId.split("\\-")[0];
 			System.out.println(studentId);
 			//	获取照片
 			ByteArrayOutputStream swapStream = new ByteArrayOutputStream();
