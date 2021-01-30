@@ -257,9 +257,9 @@ public class ReportServiceImpl implements ReportService {
 						//查询管理员role_id
 						roleId = SysRoleDao.queryRoleId("管理员");
 						userRoleId = SysUserRoleDao.queryUserRoleId(teacherId, roleId);
-					} else if (role.equals("教师角色")){
+					} else if (role.equals("报表权限")){
 						//查询教师role_id
-						roleId = SysRoleDao.queryRoleId("教师角色");
+						roleId = SysRoleDao.queryRoleId("报表权限");
 						userRoleId = SysUserRoleDao.queryUserRoleId(teacherId, roleId);
 					}
 					System.out.println(roleId);

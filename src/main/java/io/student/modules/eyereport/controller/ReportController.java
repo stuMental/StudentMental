@@ -200,13 +200,10 @@ public class ReportController extends AbstractController {
 //				Long userId = getUserId();
 //				System.out.println("dsdsd" + userId.toString());
 //				if(reportService.importxls(rowValue, tablename, userId)!=-1)
-				if(reportService.importxls(rowValue, tablename, 0L)!=-1)
+				if(reportService.importxls(rowValue, tablename, 0L)==-1)
 				{
-					return R.ok();
-				} else {
 					return R.error();
 				}
-//				dataList.add(rowValue);
 			}
 
 //			System.out.println(dataList);
